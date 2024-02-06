@@ -10,6 +10,7 @@ jupyter: python3
 #| label: load-pkgs
 #| message: false
 import numpy as np
+import pandas as pd
 ```
 
 ## Dataset
@@ -17,16 +18,101 @@ import numpy as np
 ```{python}
 #| label: load-dataset
 #| message: false
+
+# Read in the data
+#url = 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-03-14/drugs.csv'
+url = 'data/drugs_dataset.csv'
+drugs = pd.read_csv(url)
+
+# Display dimensions of the dataset
+dimensions = drugs.shape
+print(f"Dimensions of the dataset: {dimensions}")
+
+# Display features (column names) of the dataset
+features = drugs.columns.tolist()
+print("Features of the dataset:")
+print(features)
+
+# Display data types of each column
+data_types = drugs.dtypes
+
+# Count the number of numerical and categorical variables
+numerical_vars = data_types[data_types != 'object'].index.tolist()
+categorical_vars = data_types[data_types == 'object'].index.tolist()
+
+# Display the counts and names of numerical and categorical variables
+num_numerical_vars = len(numerical_vars)
+num_categorical_vars = len(categorical_vars)
+
+print(f"Number of numerical variables: {num_numerical_vars}")
+print(f"Number of categorical variables: {num_categorical_vars}")
+
+print("\nNumerical variables:")
+print(numerical_vars)
+
+print("\nCategorical variables:")
+print(categorical_vars)
 ```
 
-A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
+A brief description of the dataset:
 
-Make sure to load the data and use inline code for some of this information.
+The dataset consists of 1988 records and 28 features, providing a comprehensive overview of various pharmaceutical products and medicines. It encompasses diverse information, including the medicine's category, name, therapeutic area, common name, active substance, and unique product number. Additionally, details about patient safety, authorization status, ATC code, and whether additional monitoring or conditional approval is required are included. The dataset captures essential regulatory information, such as the marketing authorization date, refusal date, and the company holding the marketing authorization. With variables indicating generic status, biosimilarity, orphan medicine designation, and accelerated assessment, the dataset offers a rich source for exploring the landscape of pharmaceutical products. Alongside pharmacotherapeutic group information, details about the indication for specific conditions, target species, and revision history provide a holistic view. The dataset's diverse nature, coupled with numerical, categorical, and date variables, makes it a valuable resource for conducting analyses in the fields of pharmaceutical research, healthcare, and regulatory affairs.
+
+Dataset Provenance: \
+Source: The dataset comes from the TidyTuesday project, specifically the week of March 14, 2023. The data is hosted on GitHub in the TidyTuesday repository. \
+URL: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-03-14/readme.md
+
+Dataset Dimensions: \
+Number of Rows (Observations): 1988 \
+Number of Columns (Features): 28
+
+Reasons of choosing the dataset:
+
+The dataset covers a wide range of drug applications, providing a holistic view of the European drug development landscape. This includes both successful and unsuccessful applications, offering a complete picture of the regulatory environment. Data from the European Medicines Agency is highly reliable, as it is collected and maintained by an authoritative regulatory body. This ensures the accuracy of our analysis.
+
+Understanding how drug development has evolved over time, including which areas (therapeutic, disease focus) are gaining attention. Identifying the success rate of drug applications, which can offer insights into regulatory challenges or the quality of drug development. We'll gain experience in managing large datasets, including cleaning, filtering, and organizing data to prepare it for analysis. This is a fundamental skill in data science. The dataset provides an opportunity to apply different techniques to identify trends, correlations, and patterns in drug development and approval processes.
 
 ## Questions
 
-The two questions you want to answer.
+**Question 1:** Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?
+
+**Question 2:** What are the most recently released medicines (name and company) authorized for human usage for 'Hepatitis B'?
 
 ## Analysis plan
 
 -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+
+**Variables involved to answer question 1:**
+
+1.  'medicine_name' : The brand name of the medicine.
+2.  'therapeutic_area' : The therapeutic area for which the medicine is authorized.
+3.  'authorisation_status' : The authorization status of the medicine.
+4.  'revision_number' : The number of revisions for the medicine.
+5.  'conditional_approval' : Indicator if conditional approval is applied.
+
+**Plan for answering question 1:**
+
+1.  Filter the dataset to include only COVID vaccines based on 'therapeutic_area' variable.
+2.  Exclude medicines with conditions applied in the 'conditional_approval' variable.
+3.  Sort the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.
+4.  Extract and display the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
+
+No external data is needed for question 1, and no new variables need to be created.
+
+**Variables involved to answer question 2:**
+
+1.  'category' : The category (human or veterinary) of the medicine.
+2.  'medicine_name' : The brand name of the medicine.
+3.  'therapeutic_area' : List of therapeutic areas for which the medicine is authorized.
+4.  'authorisation_status' : The authorization status of the medicine.
+5.  'marketing_authorisation_holder_company_name' : The company holding the marketing authorization for the medicine.
+6.  'revision_date': The date of the latest revision for the medicine.
+
+**Plan for answering question 2:**
+
+1.  Filter the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable.
+2.  Filter the dataset to include only medicines for humans in the 'category' variable.
+3.  Sort the dataset based on the 'revision_date' in descending order to get the most recently revised medicines.
+4.  Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
+
+No external data or new variables are needed for question 2.
