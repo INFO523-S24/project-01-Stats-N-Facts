@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Proposal title",
+    "section": "",
+    "text": "import numpy as np\nimport pandas as pd"
+  },
+  {
+    "objectID": "proposal.html#dataset",
+    "href": "proposal.html#dataset",
+    "title": "Proposal title",
+    "section": "Dataset",
+    "text": "Dataset\n\n# Read in the data\n#url = 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-03-14/drugs.csv'\nurl = 'data/drugs_dataset.csv'\ndrugs = pd.read_csv(url)\n\n# Display dimensions of the dataset\ndimensions = drugs.shape\nprint(f\"Dimensions of the dataset: {dimensions}\")\n\n# Display features (column names) of the dataset\nfeatures = drugs.columns.tolist()\nprint(\"Features of the dataset:\")\nprint(features)\n\n# Display data types of each column\ndata_types = drugs.dtypes\n\n# Count the number of numerical and categorical variables\nnumerical_vars = data_types[data_types != 'object'].index.tolist()\ncategorical_vars = data_types[data_types == 'object'].index.tolist()\n\n# Display the counts and names of numerical and categorical variables\nnum_numerical_vars = len(numerical_vars)\nnum_categorical_vars = len(categorical_vars)\n\nprint(f\"Number of numerical variables: {num_numerical_vars}\")\nprint(f\"Number of categorical variables: {num_categorical_vars}\")\n\nprint(\"\\nNumerical variables:\")\nprint(numerical_vars)\n\nprint(\"\\nCategorical variables:\")\nprint(categorical_vars)\n\nDimensions of the dataset: (1988, 28)\nFeatures of the dataset:\n['category', 'medicine_name', 'therapeutic_area', 'common_name', 'active_substance', 'product_number', 'patient_safety', 'authorisation_status', 'atc_code', 'additional_monitoring', 'generic', 'biosimilar', 'conditional_approval', 'exceptional_circumstances', 'accelerated_assessment', 'orphan_medicine', 'marketing_authorisation_date', 'date_of_refusal_of_marketing_authorisation', 'marketing_authorisation_holder_company_name', 'pharmacotherapeutic_group', 'date_of_opinion', 'decision_date', 'revision_number', 'condition_indication', 'species', 'first_published', 'revision_date', 'url']\nNumber of numerical variables: 10\nNumber of categorical variables: 18\n\nNumerical variables:\n['product_number', 'patient_safety', 'additional_monitoring', 'generic', 'biosimilar', 'conditional_approval', 'exceptional_circumstances', 'accelerated_assessment', 'orphan_medicine', 'revision_number']\n\nCategorical variables:\n['category', 'medicine_name', 'therapeutic_area', 'common_name', 'active_substance', 'authorisation_status', 'atc_code', 'marketing_authorisation_date', 'date_of_refusal_of_marketing_authorisation', 'marketing_authorisation_holder_company_name', 'pharmacotherapeutic_group', 'date_of_opinion', 'decision_date', 'condition_indication', 'species', 'first_published', 'revision_date', 'url']\n\n\nA brief description of the dataset:\nThe dataset consists of 1988 records and 28 features, providing a comprehensive overview of various pharmaceutical products and medicines. It encompasses diverse information, including the medicine’s category, name, therapeutic area, common name, active substance, and unique product number. Additionally, details about patient safety, authorization status, ATC code, and whether additional monitoring or conditional approval is required are included. The dataset captures essential regulatory information, such as the marketing authorization date, refusal date, and the company holding the marketing authorization. With variables indicating generic status, biosimilarity, orphan medicine designation, and accelerated assessment, the dataset offers a rich source for exploring the landscape of pharmaceutical products. Alongside pharmacotherapeutic group information, details about the indication for specific conditions, target species, and revision history provide a holistic view. The dataset’s diverse nature, coupled with numerical, categorical, and date variables, makes it a valuable resource for conducting analyses in the fields of pharmaceutical research, healthcare, and regulatory affairs.\nDataset Provenance:\nSource: The dataset comes from the TidyTuesday project, specifically the week of March 14, 2023. The data is hosted on GitHub in the TidyTuesday repository.\nURL: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-03-14/readme.md\nDataset Dimensions:\nNumber of Rows (Observations): 1988\nNumber of Columns (Features): 28\nReasons of choosing the dataset:\nThe dataset covers a wide range of drug applications, providing a holistic view of the European drug development landscape. This includes both successful and unsuccessful applications, offering a complete picture of the regulatory environment. Data from the European Medicines Agency is highly reliable, as it is collected and maintained by an authoritative regulatory body. This ensures the accuracy of our analysis.\nUnderstanding how drug development has evolved over time, including which areas (therapeutic, disease focus) are gaining attention. Identifying the success rate of drug applications, which can offer insights into regulatory challenges or the quality of drug development. We’ll gain experience in managing large datasets, including cleaning, filtering, and organizing data to prepare it for analysis. This is a fundamental skill in data science. The dataset provides an opportunity to apply different techniques to identify trends, correlations, and patterns in drug development and approval processes."
+  },
+  {
+    "objectID": "proposal.html#questions",
+    "href": "proposal.html#questions",
+    "title": "Proposal title",
+    "section": "Questions",
+    "text": "Questions\nQuestion 1: Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?\nQuestion 2: What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?"
+  },
+  {
+    "objectID": "proposal.html#analysis-plan",
+    "href": "proposal.html#analysis-plan",
+    "title": "Proposal title",
+    "section": "Analysis plan",
+    "text": "Analysis plan\n\nA plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).\n\nVariables involved to answer question 1:\n\n‘medicine_name’ : The brand name of the medicine.\n‘therapeutic_area’ : The therapeutic area for which the medicine is authorized.\n‘authorisation_status’ : The authorization status of the medicine.\n‘revision_number’ : The number of revisions for the medicine.\n‘conditional_approval’ : Indicator if conditional approval is applied.\n\nPlan for answering question 1:\n\nFilter the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable.\nExclude medicines with conditions applied in the ‘conditional_approval’ variable.\nSort the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions.\nExtract and display the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines.\n\nNo external data is needed for question 1, and no new variables need to be created.\nVariables involved to answer question 2:\n\n‘category’ : The category (human or veterinary) of the medicine.\n‘medicine_name’ : The brand name of the medicine.\n‘therapeutic_area’ : List of therapeutic areas for which the medicine is authorized.\n‘authorisation_status’ : The authorization status of the medicine.\n‘marketing_authorisation_holder_company_name’ : The company holding the marketing authorization for the medicine.\n‘revision_date’: The date of the latest revision for the medicine.\n\nPlan for answering question 2:\n\nFilter the dataset to include only medicines related to ‘Hepatitis B’ in the ‘therapeutic_area’ variable.\nFilter the dataset to include only medicines for humans in the ‘category’ variable.\nSort the dataset based on the ‘revision_date’ in descending order to get the most recently revised medicines.\nExtract and display the relevant columns (‘medicine_name’ and ‘marketing_authorisation_holder_company_name’) for the most recently revised medicines.\n\nNo external data or new variables are needed for question 2."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project title",
+    "section": "",
+    "text": "Add project abstract here."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Project title",
+    "section": "",
+    "text": "Add project abstract here."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by [Team Name] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+  },
+  {
+    "objectID": "presentation.html#quarto",
+    "href": "presentation.html#quarto",
+    "title": "Project title",
+    "section": "Quarto",
+    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+  },
+  {
+    "objectID": "presentation.html#layouts",
+    "href": "presentation.html#layouts",
+    "title": "Project title",
+    "section": "Layouts",
+    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+  },
+  {
+    "objectID": "presentation.html#code",
+    "href": "presentation.html#code",
+    "title": "Project title",
+    "section": "Code",
+    "text": "Code\n\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Tue, 05 Dec 2023   Prob (F-statistic):           5.84e-08\nTime:                        15:17:43   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+  },
+  {
+    "objectID": "presentation.html#plots",
+    "href": "presentation.html#plots",
+    "title": "Project title",
+    "section": "Plots",
+    "text": "Plots"
+  },
+  {
+    "objectID": "presentation.html#plot-and-text",
+    "href": "presentation.html#plot-and-text",
+    "title": "Project title",
+    "section": "Plot and text",
+    "text": "Plot and text\n\n\n\nSome text\ngoes here"
+  },
+  {
+    "objectID": "presentation.html#tables",
+    "href": "presentation.html#tables",
+    "title": "Project title",
+    "section": "Tables",
+    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\n\n\n\nisland\n\n\n\nbill_length_mm\n\n\n\nbill_depth_mm\n\n\n\nflipper_length_mm\n\n\n\nbody_mass_g\n\n\n\nsex\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.1\n\n\n\n18.7\n\n\n\n181.0\n\n\n\n3750.0\n\n\n\nMale\n\n\n\n\n\n\n\n1\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.5\n\n\n\n17.4\n\n\n\n186.0\n\n\n\n3800.0\n\n\n\nFemale\n\n\n\n\n\n\n\n2\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n40.3\n\n\n\n18.0\n\n\n\n195.0\n\n\n\n3250.0\n\n\n\nFemale\n\n\n\n\n\n\n\n4\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n36.7\n\n\n\n19.3\n\n\n\n193.0\n\n\n\n3450.0\n\n\n\nFemale\n\n\n\n\n\n\n\n5\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.3\n\n\n\n20.6\n\n\n\n190.0\n\n\n\n3650.0\n\n\n\nMale"
+  },
+  {
+    "objectID": "presentation.html#images",
+    "href": "presentation.html#images",
+    "title": "Project title",
+    "section": "Images",
+    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
+  },
+  {
+    "objectID": "presentation.html#math-expressions",
+    "href": "presentation.html#math-expressions",
+    "title": "Project title",
+    "section": "Math Expressions",
+    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
+  },
+  {
+    "objectID": "presentation.html#feeling-adventurous",
+    "href": "presentation.html#feeling-adventurous",
+    "title": "Project title",
+    "section": "Feeling adventurous?",
+    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+  }
+]
