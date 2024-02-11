@@ -31,9 +31,9 @@ import pandas as pd
 url = 'data/drugs_dataset.csv'
 drugs = pd.read_csv(url)
 
-# Display dimensions of the dataset
-dimensions = drugs.shape
-print(f"Dimensions of the dataset: {dimensions}")
+# # Display dimensions of the dataset
+# dimensions = drugs.shape
+# print(f"Dimensions of the dataset: {dimensions}")
 
 # # Display features (column names) of the dataset
 # features = drugs.columns.tolist()
