@@ -4765,15 +4765,15 @@ vertical-align: -.125em;
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>dimensions <span class="op">=</span> drugs.shape</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Dimensions of the dataset: </span><span class="sc">{</span>dimensions<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display features (column names) of the dataset</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> drugs.columns.tolist()</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Features of the dataset:&quot;</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(features)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># # Display features (column names) of the dataset</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># features = drugs.columns.tolist()</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># print(&quot;Features of the dataset:&quot;)</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># print(features)</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Display data types of each column</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>data_types <span class="op">=</span> drugs.dtypes</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># # Display data types of each column</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># data_types = drugs.dtypes</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of numerical and categorical variables</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># # Count the number of numerical and categorical variables</span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># numerical_vars = data_types[data_types != &#39;object&#39;].index.tolist()</span></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># categorical_vars = data_types[data_types == &#39;object&#39;].index.tolist()</span></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
@@ -4793,9 +4793,7 @@ vertical-align: -.125em;
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>drugs.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dimensions of the dataset: (1988, 28)
-Features of the dataset:
-[&#39;category&#39;, &#39;medicine_name&#39;, &#39;therapeutic_area&#39;, &#39;common_name&#39;, &#39;active_substance&#39;, &#39;product_number&#39;, &#39;patient_safety&#39;, &#39;authorisation_status&#39;, &#39;atc_code&#39;, &#39;additional_monitoring&#39;, &#39;generic&#39;, &#39;biosimilar&#39;, &#39;conditional_approval&#39;, &#39;exceptional_circumstances&#39;, &#39;accelerated_assessment&#39;, &#39;orphan_medicine&#39;, &#39;marketing_authorisation_date&#39;, &#39;date_of_refusal_of_marketing_authorisation&#39;, &#39;marketing_authorisation_holder_company_name&#39;, &#39;pharmacotherapeutic_group&#39;, &#39;date_of_opinion&#39;, &#39;decision_date&#39;, &#39;revision_number&#39;, &#39;condition_indication&#39;, &#39;species&#39;, &#39;first_published&#39;, &#39;revision_date&#39;, &#39;url&#39;]</code></pre>
+<pre><code>Dimensions of the dataset: (1988, 28)</code></pre>
 </div>
 <div id="load-dataset" class="cell-output cell-output-display" data-execution_count="2">
 <div>
