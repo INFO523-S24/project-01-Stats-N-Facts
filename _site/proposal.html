@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.537">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -101,9 +108,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Project Title</span>
     </a>
@@ -115,32 +122,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Project</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./proposal.html" rel="" target="" aria-current="page">
- <span class="menu-text">Proposal</span></a>
+    <a class="nav-link active" href="./proposal.html" aria-current="page"> 
+<span class="menu-text">Proposal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./presentation.html" rel="" target="">
- <span class="menu-text">Presentation</span></a>
+    <a class="nav-link" href="./presentation.html"> 
+<span class="menu-text">Presentation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/INFO523-S24/project-01" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/INFO523-S24/project-01"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -178,25 +185,119 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
 
-<div id="load-pkgs" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div id="load-pkgs" class="cell" data-message="false" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.</p>
-<p>Make sure to load the data and use inline code for some of this information.</p>
+<div id="load-dataset" class="cell" data-message="false" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#url = 'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-03-14/drugs.csv'</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">'data/drugs_dataset.csv'</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>drugs <span class="op">=</span> pd.read_csv(url)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Display dimensions of the dataset</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>dimensions <span class="op">=</span> drugs.shape</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Dimensions of the dataset: </span><span class="sc">{</span>dimensions<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Display features (column names) of the dataset</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>features <span class="op">=</span> drugs.columns.tolist()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Features of the dataset:"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(features)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Display data types of each column</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>data_types <span class="op">=</span> drugs.dtypes</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of numerical and categorical variables</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>numerical_vars <span class="op">=</span> data_types[data_types <span class="op">!=</span> <span class="st">'object'</span>].index.tolist()</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>categorical_vars <span class="op">=</span> data_types[data_types <span class="op">==</span> <span class="st">'object'</span>].index.tolist()</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the counts and names of numerical and categorical variables</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>num_numerical_vars <span class="op">=</span> <span class="bu">len</span>(numerical_vars)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>num_categorical_vars <span class="op">=</span> <span class="bu">len</span>(categorical_vars)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of numerical variables: </span><span class="sc">{</span>num_numerical_vars<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of categorical variables: </span><span class="sc">{</span>num_categorical_vars<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Numerical variables:"</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numerical_vars)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Categorical variables:"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(categorical_vars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dimensions of the dataset: (1988, 28)
+Features of the dataset:
+['category', 'medicine_name', 'therapeutic_area', 'common_name', 'active_substance', 'product_number', 'patient_safety', 'authorisation_status', 'atc_code', 'additional_monitoring', 'generic', 'biosimilar', 'conditional_approval', 'exceptional_circumstances', 'accelerated_assessment', 'orphan_medicine', 'marketing_authorisation_date', 'date_of_refusal_of_marketing_authorisation', 'marketing_authorisation_holder_company_name', 'pharmacotherapeutic_group', 'date_of_opinion', 'decision_date', 'revision_number', 'condition_indication', 'species', 'first_published', 'revision_date', 'url']
+Number of numerical variables: 10
+Number of categorical variables: 18
+
+Numerical variables:
+['product_number', 'patient_safety', 'additional_monitoring', 'generic', 'biosimilar', 'conditional_approval', 'exceptional_circumstances', 'accelerated_assessment', 'orphan_medicine', 'revision_number']
+
+Categorical variables:
+['category', 'medicine_name', 'therapeutic_area', 'common_name', 'active_substance', 'authorisation_status', 'atc_code', 'marketing_authorisation_date', 'date_of_refusal_of_marketing_authorisation', 'marketing_authorisation_holder_company_name', 'pharmacotherapeutic_group', 'date_of_opinion', 'decision_date', 'condition_indication', 'species', 'first_published', 'revision_date', 'url']</code></pre>
+</div>
+</div>
+<p>A brief description of the dataset:</p>
+<p>The dataset consists of 1988 records and 28 features, providing a comprehensive overview of various pharmaceutical products and medicines. It encompasses diverse information, including the medicine’s category, name, therapeutic area, common name, active substance, and unique product number. Additionally, details about patient safety, authorization status, ATC code, and whether additional monitoring or conditional approval is required are included. The dataset captures essential regulatory information, such as the marketing authorization date, refusal date, and the company holding the marketing authorization. With variables indicating generic status, biosimilarity, orphan medicine designation, and accelerated assessment, the dataset offers a rich source for exploring the landscape of pharmaceutical products. Alongside pharmacotherapeutic group information, details about the indication for specific conditions, target species, and revision history provide a holistic view. The dataset’s diverse nature, coupled with numerical, categorical, and date variables, makes it a valuable resource for conducting analyses in the fields of pharmaceutical research, healthcare, and regulatory affairs.</p>
+<p>Dataset Provenance:<br>
+Source: The dataset comes from the TidyTuesday project, specifically the week of March 14, 2023. The data is hosted on GitHub in the TidyTuesday repository.<br>
+URL: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-03-14/readme.md</p>
+<p>Dataset Dimensions:<br>
+Number of Rows (Observations): 1988<br>
+Number of Columns (Features): 28</p>
+<p>Reasons of choosing the dataset:</p>
+<p>The dataset covers a wide range of drug applications, providing a holistic view of the European drug development landscape. This includes both successful and unsuccessful applications, offering a complete picture of the regulatory environment. Data from the European Medicines Agency is highly reliable, as it is collected and maintained by an authoritative regulatory body. This ensures the accuracy of our analysis.</p>
+<p>Understanding how drug development has evolved over time, including which areas (therapeutic, disease focus) are gaining attention. Identifying the success rate of drug applications, which can offer insights into regulatory challenges or the quality of drug development. We’ll gain experience in managing large datasets, including cleaning, filtering, and organizing data to prepare it for analysis. This is a fundamental skill in data science. The dataset provides an opportunity to apply different techniques to identify trends, correlations, and patterns in drug development and approval processes.</p>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>The two questions you want to answer.</p>
+<p><strong>Question 1:</strong> Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</p>
+<p><strong>Question 2:</strong> What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</p>
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
 <ul>
 <li>A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).</li>
 </ul>
+<p><strong>Variables involved to answer question 1:</strong></p>
+<ol type="1">
+<li>‘medicine_name’ : The brand name of the medicine.</li>
+<li>‘therapeutic_area’ : The therapeutic area for which the medicine is authorized.</li>
+<li>‘authorisation_status’ : The authorization status of the medicine.</li>
+<li>‘revision_number’ : The number of revisions for the medicine.</li>
+<li>‘conditional_approval’ : Indicator if conditional approval is applied.</li>
+</ol>
+<p><strong>Plan for answering question 1:</strong></p>
+<ol type="1">
+<li>Filter the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable.</li>
+<li>Exclude medicines with conditions applied in the ‘conditional_approval’ variable.</li>
+<li>Sort the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions.</li>
+<li>Extract and display the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines.</li>
+</ol>
+<p>No external data is needed for question 1, and no new variables need to be created.</p>
+<p><strong>Variables involved to answer question 2:</strong></p>
+<ol type="1">
+<li>‘category’ : The category (human or veterinary) of the medicine.</li>
+<li>‘medicine_name’ : The brand name of the medicine.</li>
+<li>‘therapeutic_area’ : List of therapeutic areas for which the medicine is authorized.</li>
+<li>‘authorisation_status’ : The authorization status of the medicine.</li>
+<li>‘marketing_authorisation_holder_company_name’ : The company holding the marketing authorization for the medicine.</li>
+<li>‘revision_date’: The date of the latest revision for the medicine.</li>
+</ol>
+<p><strong>Plan for answering question 2:</strong></p>
+<ol type="1">
+<li>Filter the dataset to include only medicines related to ‘Hepatitis B’ in the ‘therapeutic_area’ variable.</li>
+<li>Filter the dataset to include only medicines for humans in the ‘category’ variable.</li>
+<li>Sort the dataset based on the ‘revision_date’ in descending order to get the most recently revised medicines.</li>
+<li>Extract and display the relevant columns (‘medicine_name’ and ‘marketing_authorisation_holder_company_name’) for the most recently revised medicines.</li>
+</ol>
+<p>No external data or new variables are needed for question 2.</p>
 
 
 </section>
@@ -281,10 +382,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -294,8 +394,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -308,6 +417,120 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -351,6 +574,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -376,6 +600,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -436,6 +686,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

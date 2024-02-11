@@ -1,7 +1,14 @@
 ---
 title: "Proposal title"
 subtitle: "Proposal"
-format: html
+format: 
+    html:
+        embed-resources: true
+        code-fold: true
+
+execute: 
+  warning: false
+  error: false
 editor: visual
 jupyter: python3
 ---
@@ -37,33 +44,31 @@ print(features)
 data_types = drugs.dtypes
 
 # Count the number of numerical and categorical variables
-numerical_vars = data_types[data_types != 'object'].index.tolist()
-categorical_vars = data_types[data_types == 'object'].index.tolist()
+# numerical_vars = data_types[data_types != 'object'].index.tolist()
+# categorical_vars = data_types[data_types == 'object'].index.tolist()
 
-# Display the counts and names of numerical and categorical variables
-num_numerical_vars = len(numerical_vars)
-num_categorical_vars = len(categorical_vars)
+# # Display the counts and names of numerical and categorical variables
+# num_numerical_vars = len(numerical_vars)
+# num_categorical_vars = len(categorical_vars)
 
-print(f"Number of numerical variables: {num_numerical_vars}")
-print(f"Number of categorical variables: {num_categorical_vars}")
+# print(f"Number of numerical variables: {num_numerical_vars}")
+# print(f"Number of categorical variables: {num_categorical_vars}")
 
-print("\nNumerical variables:")
-print(numerical_vars)
+# print("\nNumerical variables:")
+# print(numerical_vars)
 
-print("\nCategorical variables:")
-print(categorical_vars)
+# print("\nCategorical variables:")
+# print(categorical_vars)
+
+drugs.head()
 ```
 
 A brief description of the dataset:
 
-The dataset consists of 1988 records and 28 features, providing a comprehensive overview of various pharmaceutical products and medicines. It encompasses diverse information, including the medicine's category, name, therapeutic area, common name, active substance, and unique product number. Additionally, details about patient safety, authorization status, ATC code, and whether additional monitoring or conditional approval is required are included. The dataset captures essential regulatory information, such as the marketing authorization date, refusal date, and the company holding the marketing authorization. With variables indicating generic status, biosimilarity, orphan medicine designation, and accelerated assessment, the dataset offers a rich source for exploring the landscape of pharmaceutical products. Alongside pharmacotherapeutic group information, details about the indication for specific conditions, target species, and revision history provide a holistic view. The dataset's diverse nature, coupled with numerical, categorical, and date variables, makes it a valuable resource for conducting analyses in the fields of pharmaceutical research, healthcare, and regulatory affairs.
+The dataset\[1\] consists of 1988 records and 28 features, providing a comprehensive overview of various pharmaceutical products and medicines. It encompasses diverse information, including the medicine's category, name, therapeutic area, common name, active substance, and unique product number. Additionally, details about patient safety, authorization status, ATC code, and whether additional monitoring or conditional approval is required are included. The dataset captures essential regulatory information, such as the marketing authorization date, refusal date, and the company holding the marketing authorization. With variables indicating generic status, biosimilarity, orphan medicine designation, and accelerated assessment, the dataset offers a rich source for exploring the landscape of pharmaceutical products. Alongside pharmacotherapeutic group information, details about the indication for specific conditions, target species, and revision history provide a holistic view. The dataset's diverse nature, coupled with numerical, categorical, and date variables, makes it a valuable resource for conducting analyses in the fields of pharmaceutical research, healthcare, and regulatory affairs.
 
-Dataset Provenance: \
-Source: The dataset comes from the TidyTuesday project, specifically the week of March 14, 2023. The data is hosted on GitHub in the TidyTuesday repository. \
-URL: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-03-14/readme.md
-
-Dataset Dimensions: \
-Number of Rows (Observations): 1988 \
+Dataset Dimensions:\
+Number of Rows (Observations): 1988\
 Number of Columns (Features): 28
 
 Reasons of choosing the dataset:
@@ -116,3 +121,13 @@ No external data is needed for question 1, and no new variables need to be creat
 4.  Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
 
 No external data or new variables are needed for question 2.
+
+## References
+
+1.  Title: European Drug Development
+
+    Author: [jonthegeek](https://github.com/jonthegeek)
+
+    Date: 2023-03-14
+
+    Link: <https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-03-14>
