@@ -35,15 +35,15 @@ drugs = pd.read_csv(url)
 dimensions = drugs.shape
 print(f"Dimensions of the dataset: {dimensions}")
 
-# Display features (column names) of the dataset
-features = drugs.columns.tolist()
-print("Features of the dataset:")
-print(features)
+# # Display features (column names) of the dataset
+# features = drugs.columns.tolist()
+# print("Features of the dataset:")
+# print(features)
 
-# Display data types of each column
-data_types = drugs.dtypes
+# # Display data types of each column
+# data_types = drugs.dtypes
 
-# Count the number of numerical and categorical variables
+# # Count the number of numerical and categorical variables
 # numerical_vars = data_types[data_types != 'object'].index.tolist()
 # categorical_vars = data_types[data_types == 'object'].index.tolist()
 
