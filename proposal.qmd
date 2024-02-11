@@ -1,5 +1,5 @@
 ---
-title: "Proposal title"
+title: "Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications"
 subtitle: "Proposal"
 format: 
     html:
