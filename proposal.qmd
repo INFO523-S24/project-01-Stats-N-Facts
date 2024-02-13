@@ -122,25 +122,6 @@ No external data is needed for question 1, and no new variables need to be creat
 
 No external data or new variables are needed for question 2.
 
-[**Potential Plots**]{.underline}
-
--   **Box Plots:** Visualizes these as distribution of test scores within specific categories or groups and examining the box plots and violin plots uncover outlines within the data.
-
-```{=html}
-<!-- -->
-```
--   **Bar Charts/Histograms:** These are the foundation, providing a solid groundwork for understanding the distribution of test scores or personality traits across different cohorts.
-
--   **Scatter Plots:** Scatter Plots helps to relate between different personality traits like plotting coordinates on a map it also explains the correlations and clusters within the data patterns
-
--   **Network Graphs:** Picture network graphs provides interaction the connections between different personality types or traits between various elements of the dataset.
-
--   **Radar Charts:** Radar Charts Plots individual profiles across multiple dimensions of personality, scanning the horizon, these visualizations provide a comprehensive overview of strengths and weaknesses.
-
--   **Heatmaps:** These Heatmaps are used for thermal detecting patterns and correlations within vast datasets visualizing into similarities and differences across different groups or individuals.
-
-These data visualization methods might change during the data analysis, some may prove fruitless and new ones may prove fruitful.
-
 ## References
 
 1.  Title: European Drug Development
