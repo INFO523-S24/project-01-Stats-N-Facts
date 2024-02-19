@@ -77,6 +77,19 @@ The dataset covers a wide range of drug applications, providing a holistic view 
 
 Understanding how drug development has evolved over time, including which areas (therapeutic, disease focus) are gaining attention. Identifying the success rate of drug applications, which can offer insights into regulatory challenges or the quality of drug development. We'll gain experience in managing large datasets, including cleaning, filtering, and organizing data to prepare it for analysis. This is a fundamental skill in data science. The dataset provides an opportunity to apply different techniques to identify trends, correlations, and patterns in drug development and approval processes.
 
+| Column                                          | Data Type | Description                                                                                   |
+|-------------------------------------------------|-----------|-----------------------------------------------------------------------------------------------|
+|   medicine_name                                 | String    | The brand name of the medicine.                                                               |
+|   therapeutic_area                              | String    | The therapeutic area(s) for which the medicine is authorized.                                 |
+|   authorisation_status                          | String    | The current authorization status of the medicine (e.g., Approved, Refused).                   |
+|   revision_number                               | Integer   | The number of times the medicine's authorization details have been revised.                   |
+|   conditional_approval                          | String    | Indicator if conditional approval is applied.                                                  |
+|   category                                      | String    | The category (human or veterinary) of the medicine.                                           |
+|   marketing_authorisation_holder_company_name   | String    | The company holding the marketing authorization for the medicine.                             |
+|   revision_date                                 | Date      | The date of the latest revision for the medicine.                                             |
+
+
+
 ## Questions
 
 **Question 1:** Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?
@@ -121,6 +134,16 @@ No external data is needed for question 1, and no new variables need to be creat
 4.  Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
 
 No external data or new variables are needed for question 2.
+
+**Project Timeline**
+
+1. By Feb 22nd: Clarify dataset details, set clear expectations for the project and finalize workflow.
+
+2. By Feb 26th: Complete analysis for Question 1 and incorporate findings into presentation.qmd
+
+3. By March 4th: Finish analysis for Question 2 and update presentation.
+
+4. March 5th-10th: Make final adjustments to the project, presentation and writeup, practice for presentation.
 
 ## References
 
