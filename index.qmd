@@ -2,7 +2,13 @@
 title: "Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications"
 subtitle: "INFO 523 - Project 1"
 author: "Stats-N-Facts"
-format: html
+format:
+  html:
+    embed-resources: true
+    code-fold: true
+execute: 
+  warning: false
+  error: false
 editor: visual
 jupyter: python3
 ---
