@@ -1,7 +1,7 @@
 ---
-title: "Project title"
+title: "Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications"
 subtitle: "INFO 523 - Project 1"
-author: "Team name"
+author: "Stats-N-Facts"
 format: html
 editor: visual
 jupyter: python3
@@ -10,3 +10,76 @@ jupyter: python3
 ## Abstract
 
 Add project abstract here.
+
+```{python}
+# Load Libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import textwrap
+```
+
+```{python}
+# Read in the data
+url = 'data/drugs_dataset.csv'
+drugs = pd.read_csv(url)
+
+drugs.head()
+```
+
+
+## Question 1 Solution
+
+```{python}
+# Replace null values with empty string in 'therapeutic_area' column
+drugs['therapeutic_area'].fillna('', inplace=True)
+
+# Filter COVID vaccines based on 'therapeutic_area'
+covid_vaccines = drugs[drugs['therapeutic_area'].str.contains('COVID', case=False)]
+
+# Exclude medicines with conditions applied
+covid_vaccines = covid_vaccines[~covid_vaccines['conditional_approval']]
+
+# Sort the dataset based on 'revision_number' in descending order
+covid_vaccines_sorted = covid_vaccines.sort_values(by='revision_number', ascending=False)
+
+# Extract relevant columns ('medicine_name' and 'revision_number')
+vaccine_revisions = covid_vaccines_sorted[['revision_number', 'medicine_name', 'therapeutic_area']]
+```
+
+```{python}
+# Top-5 data
+medicine_names = vaccine_revisions['medicine_name'][:5]
+revision_numbers = vaccine_revisions['revision_number'][:5]
+
+# Create a figure and axis object
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Create bar plot
+bars = ax.bar(medicine_names, revision_numbers, color='skyblue')
+
+# Set labels and title with customized font
+label_font = {'fontsize': 12, 'fontweight': 'bold'}
+title_font = {'fontsize': 16, 'fontweight': 'bold'}
+
+# Set labels and title
+ax.set_xlabel('Medicine Name', fontdict=label_font)
+ax.set_ylabel('Revision Number', fontdict=label_font)
+ax.set_title('Top 5 COVID vaccines that have undergone the most revisions', fontdict=title_font)
+
+# Wrap long medicine names into two lines
+wrapped_names = [textwrap.fill(name, width=25) for name in medicine_names]
+
+# Set tick labels with line breaks
+ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
+
+# Show plot
+plt.tight_layout()
+plt.show()
+```
+
+## Question 2 Solution
+
+```{python}
+
+```
