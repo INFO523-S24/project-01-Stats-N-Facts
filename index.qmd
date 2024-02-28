@@ -40,6 +40,9 @@ covid_vaccines = drugs[drugs['therapeutic_area'].str.contains('COVID', case=Fals
 # Exclude medicines with conditions applied
 covid_vaccines = covid_vaccines[~covid_vaccines['conditional_approval']]
 
+# Filter the dataset to include only authorised medicines
+covid_vaccines = covid_vaccines[covid_vaccines['authorisation_status'] == 'authorised']
+
 # Sort the dataset based on 'revision_number' in descending order
 covid_vaccines_sorted = covid_vaccines.sort_values(by='revision_number', ascending=False)
 
@@ -65,7 +68,7 @@ title_font = {'fontsize': 16, 'fontweight': 'bold'}
 # Set labels and title
 ax.set_xlabel('Medicine Name', fontdict=label_font)
 ax.set_ylabel('Revision Number', fontdict=label_font)
-ax.set_title('Top 5 COVID vaccines that have undergone the most revisions', fontdict=title_font)
+ax.set_title('\n Top 5 COVID vaccines that have undergone the most revisions \n', fontdict=title_font)
 
 # Wrap long medicine names into two lines
 wrapped_names = [textwrap.fill(name, width=25) for name in medicine_names]
@@ -81,5 +84,73 @@ plt.show()
 ## Question 2 Solution
 
 ```{python}
+# Replace null values with empty string in 'therapeutic_area' column
+drugs['therapeutic_area'].fillna('', inplace=True)
 
+# Filter the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable
+hepatitis_b_medicines = drugs[drugs['therapeutic_area'].str.contains('Hepatitis B', case=False)]
+
+# Filter the dataset to include only medicines for humans in the 'category' variable
+human_hepatitis_b_medicines = hepatitis_b_medicines[hepatitis_b_medicines['category'] == 'human']
+
+# Filter the dataset to include only authorised medicines
+authorised_hepatitis_b_medicines = human_hepatitis_b_medicines[human_hepatitis_b_medicines['authorisation_status'] == 'authorised']
+
+# Sort the dataset based on the 'revision_date' in descending order to get the most recently revised medicines
+recently_revised_medicines = authorised_hepatitis_b_medicines.sort_values(by='revision_date', ascending=False)
+
+# Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines
+top_5_result = recently_revised_medicines[['medicine_name', 'marketing_authorisation_holder_company_name', 'revision_date']].head(5)
+
+# Extract only the date part using string operations
+top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
+
+print(top_5_result)
+```
+
+# Option 1: Display results
+
+```{python}
+# Custom column labels
+custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
+
+# Draw a table to display the result
+plt.figure(figsize=(8, 2.5))
+table = plt.table(cellText=top_5_result.values,
+                  colLabels=custom_col_labels,
+                  loc='center',
+                  cellLoc='center',
+                  colColours=['skyblue']*len(top_5_result.columns),
+                  cellColours=[['lightgrey']*len(top_5_result.columns)]*len(top_5_result),
+                  fontsize=10)
+
+table.auto_set_font_size(False)
+table.set_fontsize(10)
+table.scale(1, 1.5)  # Adjust the scale to make the table more compact
+plt.axis('off')  # Turn off axis
+plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 14, 'fontweight': 'bold'})
+plt.show()
+```
+
+# Option 2: Display results
+
+```{python}
+# Convert 'revision_date' to datetime data type
+top_5_result['revision_date'] = pd.to_datetime(top_5_result['revision_date'])
+
+# Plot the scatter plot
+plt.figure(figsize=(10, 6))
+for medicine, group in top_5_result.groupby('medicine_name'):
+    plt.scatter(group['revision_date'], [medicine] * len(group), label=medicine)
+
+# Customize the plot
+plt.xlabel('Revision Date', fontdict={'fontsize': 12, 'fontweight': 'bold'})
+plt.ylabel('Medicine Name', fontdict={'fontsize': 12, 'fontweight': 'bold'})
+plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 16, 'fontweight': 'bold'})
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+
+# Show the plot
+plt.show()
 ```
