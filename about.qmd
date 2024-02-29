@@ -9,7 +9,7 @@ This project was developed by **Stats-N-Facts** For [INFO 523 - Data Mining and 
 
 -   H M Abdul Fattah: Graduate Student, Major: Information Science
 
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
+-   Srinivasan Poonkundran: Graduate Student, Major: Data Science.
 
 -   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
 
