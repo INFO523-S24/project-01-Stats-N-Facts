@@ -114,8 +114,6 @@ top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
 print(top_5_result)
 ```
 
-# Option 1: Display results
-
 ```{python}
 # Custom column labels
 custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
@@ -135,28 +133,5 @@ table.set_fontsize(10)
 table.scale(1, 1.5)  # Adjust the scale to make the table more compact
 plt.axis('off')  # Turn off axis
 plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 14, 'fontweight': 'bold'})
-plt.show()
-```
-
-# Option 2: Display results
-
-```{python}
-# Convert 'revision_date' to datetime data type
-top_5_result['revision_date'] = pd.to_datetime(top_5_result['revision_date'])
-
-# Plot the scatter plot
-plt.figure(figsize=(10, 6))
-for medicine, group in top_5_result.groupby('medicine_name'):
-    plt.scatter(group['revision_date'], [medicine] * len(group), label=medicine)
-
-# Customize the plot
-plt.xlabel('Revision Date', fontdict={'fontsize': 12, 'fontweight': 'bold'})
-plt.ylabel('Medicine Name', fontdict={'fontsize': 12, 'fontweight': 'bold'})
-plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 16, 'fontweight': 'bold'})
-plt.legend()
-plt.grid(True)
-plt.tight_layout()
-
-# Show the plot
 plt.show()
 ```
