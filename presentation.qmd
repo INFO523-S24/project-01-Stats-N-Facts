@@ -1,7 +1,11 @@
 ---
 title: "Project title"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
-author: "Author names"
+author: "Nandhini Anne
+        Sunday Usman
+        Shreemithra Naveen
+        H M Abdul Fattah
+        Srinivasan Poonkundran"
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
   data-background-size: stretch
@@ -58,6 +62,10 @@ penguins = sns.load_dataset('penguins').dropna()
 -   The presentation is created using the Quarto CLI
 
 -   `##` sets the start of a new slide
+ 
+
+
+
 
 ## Layouts
 
