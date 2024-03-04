@@ -1,11 +1,11 @@
 ---
-title: "Project title"
+title: "Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
-author: "Nandhini Anne
-        Sunday Usman
-        Shreemithra Naveen
-        H M Abdul Fattah
-        Srinivasan Poonkundran"
+author: "H M Abdul Fattah
+         Srinivasan Poonkundran
+         Shreemithra Naveen
+         Nandhini Anne
+         Sunday Usman"
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
   data-background-size: stretch
@@ -62,6 +62,7 @@ penguins = sns.load_dataset('penguins').dropna()
 -   The presentation is created using the Quarto CLI
 
 -   `##` sets the start of a new slide
+`##` HELLO
  
 
 
