@@ -15,7 +15,6 @@ jupyter: python3
 execute:
   echo: false
 ---
-
 ```{python}
 #| label: load-packages
 #| include: false
@@ -57,6 +56,7 @@ drugs = pd.read_csv(url)
 ## Question 1: Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied? {style="font-size: 0.8em;"}
 
 Answering question 1 requires the use of the following variables: **'medicine_name'**: The brand name of the medicine;   **'therapeutic_area'**: The therapeutic area for which the medicine is authorized; **'authorisation_status'**: The authorization status of the medicine; **'revision_number'**: The number of revisions for the medicine; **'conditional_approval'**: Indicator if conditional approval is applied.
+
  
 ## Why We're Interested {style="font-size: 0.8em;"}
 
