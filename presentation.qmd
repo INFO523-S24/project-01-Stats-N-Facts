@@ -16,7 +16,7 @@ format:
   revealjs:
     theme:  ['data/customtheming.scss']
     background-transition: fade
-    transition: slide
+    transition: convex
 
 editor: visual
 jupyter: python3
@@ -71,7 +71,7 @@ Answering question 1 requires the use of the following variables: <br><br>
 3.  Sorted the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.<br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
 
-## Analysis {style="font-size: 0.65em;"}
+### Plot {style="font-size: 0.65em;"}
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -124,8 +124,8 @@ ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
 plt.tight_layout()
 plt.show()
 ```
-
-The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.
+### Analysis
+- The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.
 
 ## Question 2:  {style="font-size: 0.7em;"}
 
@@ -152,7 +152,7 @@ Answering question 2 requires the use of the following variables: <br>
 3.  Sorted the dataset based on the 'revision_date' in descending order to get the most recently revised medicines. <br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
 
-## Analysis {style="font-size: 0.7em;"}
+### Plot {style="font-size: 0.7em;"}
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -198,14 +198,15 @@ plt.axis('off')  # Turn off axis
 plt.title('Most recently released Hepatitis B medicines \n authorized for human usage \n', fontdict={'fontsize': 18, 'fontweight': 'bold'})
 plt.show()
 ```
+### Analysis
 
-The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.
+- The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.
 
 ## Limitations: {style="font-size: 0.7em;"}
 
-1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+-  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
 
-2.  There should not be spaces after the opening `$` or before the closing `$`.
+-  There should not be spaces after the opening `$` or before the closing `$`.
 
 ## Thank you {style="text-align: center"}
 ![](images/thank-you-dog.gif){fig-align="center"}
