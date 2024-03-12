@@ -29,6 +29,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import textwrap
+import re
 ```
 
 ```{python}
@@ -37,19 +38,21 @@ url = 'data/drugs_dataset.csv'
 drugs = pd.read_csv(url)
 ```
 
-## Introduction {style="font-size: 0.8em;"}
+## Introduction {style="font-size: 0.7em;"}
 
 - The evolution of drug development are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.
 - An indepth understanding of the evolving nature of drugs can greatly contribute to the current and ongoing research advancements in the health domain and carefully guide the government in making efficient health policies.
-- The dataset of interest was collected by the European Medicines Agency.
-- This dataset contains 1988 rows and 28 columns, including numerical and categorical variables.
-- With our dataset, we will be answering two questions: what COVID vaccines has undergone the most revisions while maintaining approved authorization status and what are the recently released medicine for Hepatitis B?
+- The dataset of interest was collected by the European Medicines Agency and contains 1988 rows and 28 columns, including numerical and categorical variables.
+- With our dataset, we will be answering two questions:
+    1. What COVID vaccines has undergone the most revisions while maintaining approved authorization status?
+    2. What are the recently released medicine for Hepatitis B?
 
----
+## Question 1: {style="font-size: 0.7em;"}
 
-## Question 1: Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied? {style="font-size: 0.7em;"}
+**Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?**
 
-Answering question 1 requires the use of the following variables: 
+<br>
+Answering question 1 requires the use of the following variables: <br><br>
 
 |  Column Name         |         Description            |
 |----------------------|--------------------------------|
@@ -60,14 +63,15 @@ Answering question 1 requires the use of the following variables:
 | revision_number      | The number of revisions for the medicine |
 |                      |                                          |
 
-## Approach for answering question 1: {style="font-size: 0.7em;"}
+## Approach {style="font-size: 0.7em;"}
 
-1.  Filtered the dataset to include only COVID vaccines based on 'therapeutic_area' variable.<br>
-2.  Excluded medicines with conditions applied in the 'conditional_approval' variable.<br>
-3.  Sorted the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.<br>
+<br>
+1.  Filtered the dataset to include only COVID vaccines based on 'therapeutic_area' variable.<br><br>
+2.  Excluded medicines with conditions applied in the 'conditional_approval' variable.<br><br>
+3.  Sorted the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.<br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
 
-## Question 1 Solution {style="font-size: 0.5em;"}
+## Analysis {style="font-size: 0.65em;"}
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -87,15 +91,16 @@ covid_vaccines_sorted = covid_vaccines.sort_values(by='revision_number', ascendi
 
 # Extract relevant columns ('medicine_name' and 'revision_number')
 vaccine_revisions = covid_vaccines_sorted[['revision_number', 'medicine_name', 'therapeutic_area']]
-```
 
-```{python}
 # Top-5 data
 medicine_names = vaccine_revisions['medicine_name'][:5]
 revision_numbers = vaccine_revisions['revision_number'][:5]
 
+# Remove content within parentheses
+medicine_names = [re.sub(r'\([^()]*\)', '', name).strip() for name in medicine_names]
+
 # Create a figure and axis object
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(8, 5))
 
 # Create bar plot
 bars = ax.bar(medicine_names, revision_numbers, color='skyblue')
@@ -122,9 +127,12 @@ plt.show()
 
 The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.
 
-## Question 2: What are the most recently released medicines (name and company) authorized for human usage for 'Hepatitis B'? {style="font-size: 0.6em;"}
+## Question 2:  {style="font-size: 0.7em;"}
 
-Answering question 2 requires the use of the following variables: 
+**What are the most recently released medicines (name and company) authorized for human usage for 'Hepatitis B'?**
+
+<br>
+Answering question 2 requires the use of the following variables: <br>
 
 |  Column Name         |         Description            |
 |----------------------|--------------------------------|
@@ -132,18 +140,19 @@ Answering question 2 requires the use of the following variables:
 | medicine_name        | The brand name of the medicine |
 | therapeutic_area     | The therapeutic area for which the medicine is authorized |
 | authorisation_status     | The authorization status of the medicine |
-| marketing_authorisation_holder_company_name        | The company holding the marketing authorization for the medicine |
+| company_name        | The company holding the marketing authorization for the medicine |
 | revision_date     | The date of the latest revision for the medicine |
 |                   |                                                  |
 
-## Approach for answering question 2: {style="font-size: 0.7em;"}
+## Approach {style="font-size: 0.7em;"}
 
-1.  Filtered the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable. <br>
-2.  Filtered the dataset to include only medicines for humans in the 'category' variable. <br>
-3.  Sorted the dataset based on the 'revision_date' in descending order to get the most recently revised medicines. <br>
+<br>
+1.  Filtered the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable. <br><br>
+2.  Filtered the dataset to include only medicines for humans in the 'category' variable. <br><br>
+3.  Sorted the dataset based on the 'revision_date' in descending order to get the most recently revised medicines. <br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
 
-## Question 2 Solution {style="font-size: 0.6em;"}
+## Analysis {style="font-size: 0.7em;"}
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -173,7 +182,7 @@ top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
 custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
 
 # Draw a table to display the result
-plt.figure(figsize=(8, 2.5))
+plt.figure(figsize=(12, 4.5))
 table = plt.table(cellText=top_5_result.values,
                   colLabels=custom_col_labels,
                   loc='center',
@@ -184,15 +193,15 @@ table = plt.table(cellText=top_5_result.values,
 
 table.auto_set_font_size(False)
 table.set_fontsize(10)
-table.scale(1, 1.5)  # Adjust the scale to make the table more compact
+table.scale(1, 3.5)  # Adjust the scale to make the table more compact
 plt.axis('off')  # Turn off axis
-plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 14, 'fontweight': 'bold'})
+plt.title('Most recently released Hepatitis B medicines \n authorized for human usage \n', fontdict={'fontsize': 18, 'fontweight': 'bold'})
 plt.show()
 ```
 
 The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.
 
-## Limitations:
+## Limitations: {style="font-size: 0.7em;"}
 
 1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
 
