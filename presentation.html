@@ -8,10 +8,10 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.547">
 
-  <meta name="author" content="Author names">
-  <title>Project Title - Project title</title>
+  <meta name="author" content="H M Abdul Fattah, Srinivasan Poonkundran, Shreemithra Naveen, Nandhini Anne &amp; Sunday Usman">
+  <title>Project Title - Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,28 +326,78 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="images/watercolour_sys02_img34_teacup-ocean.jpg" data-background-opacity="0.7" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
-  <h1 class="title">Project title</h1>
+  <h1 class="title">Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications</h1>
   <p class="subtitle">INFO 523 - Spring 2023 - Project 1</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Author names 
+H M Abdul Fattah, Srinivasan Poonkundran, Shreemithra Naveen, Nandhini Anne &amp; Sunday Usman 
 </div>
 </div>
 </div>
 
 </section>
 <section>
-<section id="using-quarto-for-presentations" class="title-slide slide level1 center">
-<h1>Using Quarto for presentations</h1>
+<section id="overview-and-analysis" class="title-slide slide level1 center">
+<h1>Overview and Analysis</h1>
 
 </section>
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
+<section id="introduction" class="slide level2" style="font-size: 0.8em;">
+<h2>Introduction</h2>
 <ul>
-<li><p>The presentation is created using the Quarto CLI</p></li>
-<li><p><code>##</code> sets the start of a new slide</p></li>
+<li><p>The evolution of drug development over time, including therapeutic and disease areas are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.</p></li>
+<li><p>Drug development has become more focused on targeted therapies and personalized treatments, as well as more holistic approaches that target the underlying disease processes. The dataset of interest was collected by the European Medicines Agency. A comprehensive list of medicines is provided, including their categories, names, therapeutic areas, common names, active substances, and unique product numbers. This dataset contains 1988 rows and 28 columns, and its diverse nature, comprising numerical, categorical, and date variables, makes it an invaluable resource for pharmaceutical research, medical care, and government regulation.</p></li>
+</ul>
+</section>
+<section id="question-1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied" class="slide level2" style="font-size: 0.8em;">
+<h2>Question 1: Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</h2>
+<p>Answering question 1 requires the use of the following variables: <strong>‘medicine_name’</strong>: The brand name of the medicine; <strong>‘therapeutic_area’</strong>: The therapeutic area for which the medicine is authorized; <strong>‘authorisation_status’</strong>: The authorization status of the medicine; <strong>‘revision_number’</strong>: The number of revisions for the medicine; <strong>‘conditional_approval’</strong>: Indicator if conditional approval is applied.</p>
+</section>
+<section id="why-were-interested" class="slide level2" style="font-size: 0.8em;">
+<h2>Why We’re Interested</h2>
+<p>Maintaining a stable authorization status while understanding the COVID vaccine revision landscape is crucial for several reasons:</p>
+<ol type="1">
+<li><p><strong>Monitoring Vaccine Development</strong>: Tracking COVID vaccine revisions are an important indicator of the progress of ongoing research and development.</p></li>
+<li><p><strong>Assessment of Safety and Efficacy</strong>: Ensuring the safety and efficacy of vaccines, it is necessary to identify vaccines that undergo revisions while maintaining their approval status.</p></li>
+<li><p><strong>Regulatory Compliance</strong>: In order to assure regulatory compliance and robustness of the approval process, it is important to observe how vaccines navigate regulatory processes and maintain authorization status.</p></li>
+<li><p><strong>Public Health Implications</strong>: It is useful to gain insight into vaccine revisions in order to better understand how they might impact public health policies, vaccination campaigns, and public trust in vaccines.</p></li>
+</ol>
+</section>
+<section id="approach" class="slide level2" style="font-size: 0.8em;">
+<h2>Approach</h2>
+<ul>
+<li><p>Two-step approach is used to determine which COVID vaccines have undergone the most revisions while maintaining approval status without conditions. In the first step, the dataset is meticulously prepared by handling missing values, excluding vaccines with conditions, and filtering for COVID vaccines. Next, a customized bar plot is used to visualize the top 5 vaccines with the highest revision numbers. In this method, a focus is placed on relevant vaccines that have stable authorizations and notable revision histories, thereby ensuring a comprehensive analysis.</p></li>
+<li><p>A balance is struck between data preparation and effective visualization during data analysis. Filtering and sorting refine the data, while the bar plot illustrates how the top vaccine revision numbers have changed over time. With these two approaches combined, vaccine revisions can be effectively addressed in the context of authorization status and absence of conditions.</p></li>
+</ul>
+</section>
+<section id="result" class="slide level2">
+<h2>Result</h2>
+<ul>
+<li>As indicated by the bar chart, RoAtemra had the most revisions of approximately 40, while jcovden had the least revisions of approximately 27.</li>
+</ul>
+</section>
+<section id="question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b" class="slide level2" style="font-size: 0.8em;">
+<h2>Question 2: What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</h2>
+<p>Answering question 2 requires the use of the following variables: ‘category’ : The category (human or veterinary) of the medicine; ‘medicine_name’ : The brand name of the medicine; ‘therapeutic_area’ : List of therapeutic areas for which the medicine is authorized; ‘authorisation_status’ : The authorization status of the medicine; ‘marketing_authorisation_holder_company_name’ : The company holding the marketing authorization for the medicine; ‘revision_date’: The date of the latest revision for the medicine.</p>
+</section>
+<section id="why-were-interested-1" class="slide level2" style="font-size: 0.8em;">
+<h2>Why We’re Interested</h2>
+<ul>
+<li>Utilizing these variables, we are able to identify the latest medicines specifically designed for the treatment of hepatitis B, providing insight into recent developments in that field.</li>
+<li>Knowing the most recent treatments for Hepatitis B is essential for staying informed about recent advancements in treatment. As a result of the selection of variables, comprehensive information can be captured, including the name of the company that is responsible for marketing authorization as well as the revision date, providing a temporal context. By using this approach, we ensure a thorough exploration of recent releases, providing valuable insight into the pharmaceutical industry’s response to Hepatitis B, and making sure that informed decisions are made within the healthcare and regulatory sectors.</li>
+</ul>
+</section>
+<section id="approach-1" class="slide level2" style="font-size: 0.8em;">
+<h2>Approach</h2>
+<ul>
+<li>We employ a two-step strategy to identify the latest revisions to Hepatitis B medicines. In the initial stages of data preparation and filtering, we focus on human-specific Hepatitis B medicines and sort them by revision dates. The top 5 most recent medicines are then presented in a visual layout that includes custom column labels, color mapping, as well as essential details such as medicine names, company names, revision dates, etc. It features key information in a format that is easily accessible and engaging for the latest developments in Hepatitis B medicines.</li>
+</ul>
+</section>
+<section id="result-1" class="slide level2">
+<h2>Result</h2>
+<ul>
+<li>From our result, the most recently revised vaccine is Vaxelis by MCM Vaccine B.V. on the 20th os February 2023.</li>
 </ul>
 </section>
 <section id="layouts" class="slide level2">
@@ -369,40 +419,26 @@ Author names
 <aside><ol class="aside-footnotes"><li id="fn1"><p>And add footnotes</p></li></ol></aside></section>
 <section id="code" class="slide level2">
 <h2>Code</h2>
-<div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-stdout">
-<pre><code>                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                    mpg   R-squared:                       0.073
-Model:                            OLS   Adj. R-squared:                  0.070
-Method:                 Least Squares   F-statistic:                     30.59
-Date:                Tue, 05 Dec 2023   Prob (F-statistic):           5.84e-08
-Time:                        15:17:43   Log-Likelihood:                -1346.4
-No. Observations:                 392   AIC:                             2697.
-Df Residuals:                     390   BIC:                             2705.
-Df Model:                           1                                         
-Covariance Type:            nonrobust                                         
-==============================================================================
-                 coef    std err          t      P&gt;|t|      [0.025      0.975]
-------------------------------------------------------------------------------
-const         35.8015      2.266     15.800      0.000      31.347      40.257
-speed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623
-==============================================================================
-Omnibus:                       27.687   Durbin-Watson:                   0.589
-Prob(Omnibus):                  0.000   Jarque-Bera (JB):               18.976
-Skew:                           0.420   Prob(JB):                     7.57e-05
-Kurtosis:                       2.323   Cond. No.                         169.
-==============================================================================
-
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
-</div>
-</div>
 </section>
 <section id="plots" class="slide level2">
 <h2>Plots</h2>
-
-<img data-src="presentation_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
+<div id="c22bd814" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-6-output-1.png" width="951" height="568"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-6-output-2.png" width="614" height="247"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 <section id="plot-and-text" class="slide level2">
 <h2>Plot and text</h2>
 <div class="columns">
@@ -412,11 +448,18 @@ Notes:
 <li><p>goes here</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<div class="cell" data-fig.width="5.5" data-execution_count="6">
+<div id="af80e6a7" class="cell" data-fig.width="5.5" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/cell-7-output-1.png"></p>
+<p><img data-src="presentation_files/figure-revealjs/cell-7-output-1.png" width="951" height="568"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-7-output-2.png" width="614" height="247"></p>
 </figure>
 </div>
 </div>
@@ -432,236 +475,6 @@ Notes:
 <section id="tables" class="slide level2">
 <h2>Tables</h2>
 <p>If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,</p>
-<div class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="14">
-<table border="1" class="dataframe">
-
-<thead>
-
-<tr style="text-align: right;">
-
-<th>
-</th>
-
-<th>
-species
-</th>
-
-<th>
-island
-</th>
-
-<th>
-bill_length_mm
-</th>
-
-<th>
-bill_depth_mm
-</th>
-
-<th>
-flipper_length_mm
-</th>
-
-<th>
-body_mass_g
-</th>
-
-<th>
-sex
-</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<th>
-0
-</th>
-
-<td>
-Adelie
-</td>
-
-<td>
-Torgersen
-</td>
-
-<td>
-39.1
-</td>
-
-<td>
-18.7
-</td>
-
-<td>
-181.0
-</td>
-
-<td>
-3750.0
-</td>
-
-<td>
-Male
-</td>
-
-</tr>
-
-<tr>
-
-<th>
-1
-</th>
-
-<td>
-Adelie
-</td>
-
-<td>
-Torgersen
-</td>
-
-<td>
-39.5
-</td>
-
-<td>
-17.4
-</td>
-
-<td>
-186.0
-</td>
-
-<td>
-3800.0
-</td>
-
-<td>
-Female
-</td>
-
-</tr>
-
-<tr>
-
-<th>
-2
-</th>
-
-<td>
-Adelie
-</td>
-
-<td>
-Torgersen
-</td>
-
-<td>
-40.3
-</td>
-
-<td>
-18.0
-</td>
-
-<td>
-195.0
-</td>
-
-<td>
-3250.0
-</td>
-
-<td>
-Female
-</td>
-
-</tr>
-
-<tr>
-
-<th>
-4
-</th>
-
-<td>
-Adelie
-</td>
-
-<td>
-Torgersen
-</td>
-
-<td>
-36.7
-</td>
-
-<td>
-19.3
-</td>
-
-<td>
-193.0
-</td>
-
-<td>
-3450.0
-</td>
-
-<td>
-Female
-</td>
-
-</tr>
-
-<tr>
-
-<th>
-5
-</th>
-
-<td>
-Adelie
-</td>
-
-<td>
-Torgersen
-</td>
-
-<td>
-39.3
-</td>
-
-<td>
-20.6
-</td>
-
-<td>
-190.0
-</td>
-
-<td>
-3650.0
-</td>
-
-<td>
-Male
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
-</div>
-</div>
 </section>
 <section id="images" class="slide level2">
 <h2>Images</h2>
