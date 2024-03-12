@@ -10,7 +10,11 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
+<<<<<<< HEAD
   <meta name="author" content="H M Abdul Fattah  Srinivasan Poonkundran  Shreemithra Naveen  Nandhini Anne  Sunday Usman">
+=======
+  <meta name="author" content="H M Abdul Fattah, Srinivasan Poonkundran, Shreemithra Naveen, Nandhini Anne &amp; Sunday Usman">
+>>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
   <title>Project Title - Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -332,13 +336,18 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
+<<<<<<< HEAD
 H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini Anne<br> Sunday Usman 
+=======
+H M Abdul Fattah, Srinivasan Poonkundran, Shreemithra Naveen, Nandhini Anne &amp; Sunday Usman 
+>>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 </div>
 </div>
 </div>
 
 </section>
 <section>
+<<<<<<< HEAD
 <section id="using-quarto-for-presentations" class="title-slide slide level1 center">
 <h1>Using Quarto for presentations</h1>
 
@@ -348,6 +357,67 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <ul>
 <li><p>The presentation is created using the Quarto CLI</p></li>
 <li><p><code>##</code> sets the start of a new slide <code>##</code> HELLO</p></li>
+=======
+<section id="overview-and-analysis" class="title-slide slide level1 center">
+<h1>Overview and Analysis</h1>
+
+</section>
+<section id="introduction" class="slide level2" style="font-size: 0.8em;">
+<h2>Introduction</h2>
+<ul>
+<li><p>The evolution of drug development over time, including therapeutic and disease areas are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.</p></li>
+<li><p>Drug development has become more focused on targeted therapies and personalized treatments, as well as more holistic approaches that target the underlying disease processes. The dataset of interest was collected by the European Medicines Agency. A comprehensive list of medicines is provided, including their categories, names, therapeutic areas, common names, active substances, and unique product numbers. This dataset contains 1988 rows and 28 columns, and its diverse nature, comprising numerical, categorical, and date variables, makes it an invaluable resource for pharmaceutical research, medical care, and government regulation.</p></li>
+</ul>
+</section>
+<section id="question-1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied" class="slide level2" style="font-size: 0.8em;">
+<h2>Question 1: Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</h2>
+<p>Answering question 1 requires the use of the following variables: <strong>‘medicine_name’</strong>: The brand name of the medicine; <strong>‘therapeutic_area’</strong>: The therapeutic area for which the medicine is authorized; <strong>‘authorisation_status’</strong>: The authorization status of the medicine; <strong>‘revision_number’</strong>: The number of revisions for the medicine; <strong>‘conditional_approval’</strong>: Indicator if conditional approval is applied.</p>
+</section>
+<section id="why-were-interested" class="slide level2" style="font-size: 0.8em;">
+<h2>Why We’re Interested</h2>
+<p>Maintaining a stable authorization status while understanding the COVID vaccine revision landscape is crucial for several reasons:</p>
+<ol type="1">
+<li><p><strong>Monitoring Vaccine Development</strong>: Tracking COVID vaccine revisions are an important indicator of the progress of ongoing research and development.</p></li>
+<li><p><strong>Assessment of Safety and Efficacy</strong>: Ensuring the safety and efficacy of vaccines, it is necessary to identify vaccines that undergo revisions while maintaining their approval status.</p></li>
+<li><p><strong>Regulatory Compliance</strong>: In order to assure regulatory compliance and robustness of the approval process, it is important to observe how vaccines navigate regulatory processes and maintain authorization status.</p></li>
+<li><p><strong>Public Health Implications</strong>: It is useful to gain insight into vaccine revisions in order to better understand how they might impact public health policies, vaccination campaigns, and public trust in vaccines.</p></li>
+</ol>
+</section>
+<section id="approach" class="slide level2" style="font-size: 0.8em;">
+<h2>Approach</h2>
+<ul>
+<li><p>Two-step approach is used to determine which COVID vaccines have undergone the most revisions while maintaining approval status without conditions. In the first step, the dataset is meticulously prepared by handling missing values, excluding vaccines with conditions, and filtering for COVID vaccines. Next, a customized bar plot is used to visualize the top 5 vaccines with the highest revision numbers. In this method, a focus is placed on relevant vaccines that have stable authorizations and notable revision histories, thereby ensuring a comprehensive analysis.</p></li>
+<li><p>A balance is struck between data preparation and effective visualization during data analysis. Filtering and sorting refine the data, while the bar plot illustrates how the top vaccine revision numbers have changed over time. With these two approaches combined, vaccine revisions can be effectively addressed in the context of authorization status and absence of conditions.</p></li>
+</ul>
+</section>
+<section id="result" class="slide level2">
+<h2>Result</h2>
+<ul>
+<li>As indicated by the bar chart, RoAtemra had the most revisions of approximately 40, while jcovden had the least revisions of approximately 27.</li>
+</ul>
+</section>
+<section id="question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b" class="slide level2" style="font-size: 0.8em;">
+<h2>Question 2: What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</h2>
+<p>Answering question 2 requires the use of the following variables: ‘category’ : The category (human or veterinary) of the medicine; ‘medicine_name’ : The brand name of the medicine; ‘therapeutic_area’ : List of therapeutic areas for which the medicine is authorized; ‘authorisation_status’ : The authorization status of the medicine; ‘marketing_authorisation_holder_company_name’ : The company holding the marketing authorization for the medicine; ‘revision_date’: The date of the latest revision for the medicine.</p>
+</section>
+<section id="why-were-interested-1" class="slide level2" style="font-size: 0.8em;">
+<h2>Why We’re Interested</h2>
+<ul>
+<li>Utilizing these variables, we are able to identify the latest medicines specifically designed for the treatment of hepatitis B, providing insight into recent developments in that field.</li>
+<li>Knowing the most recent treatments for Hepatitis B is essential for staying informed about recent advancements in treatment. As a result of the selection of variables, comprehensive information can be captured, including the name of the company that is responsible for marketing authorization as well as the revision date, providing a temporal context. By using this approach, we ensure a thorough exploration of recent releases, providing valuable insight into the pharmaceutical industry’s response to Hepatitis B, and making sure that informed decisions are made within the healthcare and regulatory sectors.</li>
+</ul>
+</section>
+<section id="approach-1" class="slide level2" style="font-size: 0.8em;">
+<h2>Approach</h2>
+<ul>
+<li>We employ a two-step strategy to identify the latest revisions to Hepatitis B medicines. In the initial stages of data preparation and filtering, we focus on human-specific Hepatitis B medicines and sort them by revision dates. The top 5 most recent medicines are then presented in a visual layout that includes custom column labels, color mapping, as well as essential details such as medicine names, company names, revision dates, etc. It features key information in a format that is easily accessible and engaging for the latest developments in Hepatitis B medicines.</li>
+</ul>
+</section>
+<section id="result-1" class="slide level2">
+<h2>Result</h2>
+<ul>
+<li>From our result, the most recently revised vaccine is Vaxelis by MCM Vaccine B.V. on the 20th os February 2023.</li>
+>>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 </ul>
 </section>
 <section id="layouts" class="slide level2">
@@ -369,6 +439,7 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <aside><ol class="aside-footnotes"><li id="fn1"><p>And add footnotes</p></li></ol></aside></section>
 <section id="code" class="slide level2">
 <h2>Code</h2>
+<<<<<<< HEAD
 <div id="9961af68" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>       medicine_name marketing_authorisation_holder_company_name revision_date
@@ -387,13 +458,27 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <div>
 <figure>
 <p><img data-src="presentation_files/figure-revealjs/cell-6-output-1.png"></p>
+=======
+</section>
+<section id="plots" class="slide level2">
+<h2>Plots</h2>
+<div id="c22bd814" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-6-output-1.png" width="951" height="568"></p>
+>>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 </figure>
 </div>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure>
+<<<<<<< HEAD
 <p><img data-src="presentation_files/figure-revealjs/cell-6-output-2.png"></p>
+=======
+<p><img data-src="presentation_files/figure-revealjs/cell-6-output-2.png" width="614" height="247"></p>
+>>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 </figure>
 </div>
 </div>
@@ -408,11 +493,26 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <li><p>goes here</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
+<<<<<<< HEAD
 <div id="d5292a8d" class="cell" data-fig.width="5.5" data-execution_count="6">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
 <p><img data-src="presentation_files/figure-revealjs/cell-7-output-1.png"></p>
+=======
+<div id="af80e6a7" class="cell" data-fig.width="5.5" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-7-output-1.png" width="951" height="568"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-7-output-2.png" width="614" height="247"></p>
+>>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 </figure>
 </div>
 </div>
@@ -428,6 +528,7 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <section id="tables" class="slide level2">
 <h2>Tables</h2>
 <p>If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,</p>
+<<<<<<< HEAD
 <div id="a4509212" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <table border="1" class="dataframe">
@@ -658,6 +759,8 @@ Male
 </table>
 </div>
 </div>
+=======
+>>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 </section>
 <section id="images" class="slide level2">
 <h2>Images</h2>

@@ -14,8 +14,11 @@ jupyter: python3
 ---
 
 ## Abstract
+This dataset, an intricate mosaic sourced from the European Medicines Agency, encapsulates the multifaceted landscape of European drug development. Housing 1988 records and boasting 28 variables, it unfolds a comprehensive narrative of pharmaceutical products. From fundamental details like medicine categories, therapeutic areas, and active substances to nuanced insights encompassing patient safety indicators, authorization statuses, and regulatory nuances, the dataset is a treasure trove for those deciphering the complex journey from drug conception to authorization.
 
-Add project abstract here.
+
+
+Navigating through the dataset reveals crucial regulatory milestones, including marketing authorization dates, refusal details, and designations such as orphan medicine and accelerated assessment. The inclusion of variables indicating generic status, biosimilarity, and revision histories further enriches the dataset, offering a panoramic view of pharmaceutical endeavors in Europe. As we embark on the analysis of this dataset, our objective is to distill valuable insights, uncovering trends and correlations that underpin the intricate dance between regulation and innovation in European drug development.
 
 ```{python}
 # Load Libraries
@@ -32,6 +35,18 @@ drugs = pd.read_csv(url)
 
 drugs.head()
 ```
+
+## Question1-Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?
+
+### Introduction
+In the dynamic landscape of pharmaceutical development, the ongoing refinement and adaptation of COVID vaccines are of paramount importance. As the global community grapples with the challenges posed by the COVID-19 pandemic, regulatory bodies continuously monitor and update the authorization details of vaccines to ensure their efficacy, safety, and adherence to evolving standards. Question 1 of this analysis aims to unravel the intricacies of COVID vaccine development by investigating which vaccines have undergone the most revisions while maintaining an approved authorization status with no applied conditions.
+
+This inquiry is particularly pertinent in understanding the regulatory response to emerging variants, evolving scientific knowledge, and the pursuit of continuous improvement in vaccine formulations. By focusing on variables such as medicine name, therapeutic area, authorization status, revision number, and conditional approval, the analysis aims to provide insights into the resilience and adaptability of COVID vaccines in the face of ongoing challenges. Through a meticulous examination of the dataset, we aim to identify patterns and trends that shed light on the regulatory landscape surrounding COVID vaccine development in the European context.
+
+### Approach
+The strategy to uncover COVID vaccines with the most revisions while maintaining approved authorization status and devoid of applied conditions involves a systematic process of data preparation, filtering, and visualization. Beginning with imputation to handle null values in the 'therapeutic_area' column, the dataset is refined by filtering out drugs related to COVID, creating a specialized subset focused on vaccines for the virus. Subsequent steps include the filtration of the dataset to exclusively include authorized medicines and sorting based on 'revision_number' in descending order. This sequential arrangement positions vaccines with the highest revision numbers at the forefront, providing valuable insights into their dynamic regulatory trajectory.
+
+Following data preparation and sorting, the extraction of pertinent columns ('medicine_name', 'revision_number', 'therapeutic_area') lays the groundwork for a visually impactful bar plot. This visualization method, chosen for its clarity and interpretability, showcases the top 5 COVID vaccines with the most revisions. The use of color in the plot not only enhances visual appeal but also aids in distinguishing between different vaccines. By amalgamating imputation, filtering, sorting, and visualization techniques, this approach facilitates a comprehensive exploration, offering a nuanced understanding of the regulatory nuances and adaptations of these critical COVID vaccines.
 
 
 ## Question 1 Solution
@@ -86,6 +101,19 @@ ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
 plt.tight_layout()
 plt.show()
 ```
+
+## Question 2-What are the most recently released medicines (name and company) authorized for human usage for 'Hepatitis B'?
+### Introduction
+The exploration of recent advancements in pharmaceuticals pertaining to Hepatitis B takes center stage. This inquiry delves into identifying the most recently released medicines authorized for human usage in the treatment of Hepatitis B. The dataset provides a diverse array of variables, crucial among them being 'therapeutic_area,' 'category,' 'authorisation_status,' 'marketing_authorisation_holder_company_name,' and 'revision_date.' To unravel the sought-after insights, the analysis focuses on medicines specifically designed for human usage in the category of Hepatitis B.
+
+The significance of this question lies in its potential to shed light on the cutting-edge developments in the treatment of Hepatitis B, a pertinent public health concern. By honing in on the most recent releases, we gain valuable insights into the innovative landscape of pharmaceuticals targeting this disease. This question not only navigates through regulatory milestones but also taps into the pulse of advancements in Hepatitis B medication, offering a comprehensive view of the latest interventions and the companies spearheading these endeavors. As we embark on this exploration, our interest is piqued by the potential revelations that may contribute to a deeper understanding of the dynamic intersection between regulatory processes and the forefront of pharmaceutical innovation in the context of Hepatitis B.
+
+### Approach
+The exploration of the most recently released medicines targeting Hepatitis B involves a strategic combination of data filtering and visualization techniques. The initial step focuses on meticulous data filtering, ensuring a targeted analysis by including only medicines related to Hepatitis B in the 'therapeutic_area' variable. Subsequent filters narrow down the dataset to human medicines with authorized status, refining the scope to pharmaceutical interventions specifically designed for human usage and approved for treating Hepatitis B. The critical sorting step organizes the dataset based on the 'revision_date' in descending order, spotlighting the most recent releases and enabling a chronological understanding of advancements in Hepatitis B medication.
+
+Following the data preparation steps, the approach shifts to visualization, employing a table representation to succinctly convey detailed information about the most recent Hepatitis B medicines. This choice is driven by the need for precision and efficiency in presenting key details such as medicine name, marketing authorization holder company, and revision date. The custom table incorporates color mapping, utilizing skyblue for column headers to enhance visual appeal and facilitate quick identification of crucial information. This dual-method approach, blending filtering and color-enhanced table representation, not only uncovers the latest developments in Hepatitis B medication but also ensures a visually accessible and comprehensive presentation of the information.
+
+
 
 ## Question 2 Solution
 

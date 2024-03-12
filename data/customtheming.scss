@@ -5,5 +5,15 @@
 }
 
 /*-- scss:defaults --*/
+$body-bg: #FFFFFF;
 
-$body-bg: #ffffff;
+/* Defining variables */
+:root {
+  --title-font-size: 60px; /* Adjust this value as needed */
+}
+
+/*-- scss:rules --*/
+/* Styling title */
+.title {
+  font-size: var(--title-font-size) !important; /* Setting font size for title */
+}
