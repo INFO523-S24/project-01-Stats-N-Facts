@@ -1,15 +1,18 @@
 ---
-title: "Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications"
+title: "Exploring European Drug Development"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
 author: "H M Abdul Fattah, Srinivasan Poonkundran, Shreemithra Naveen, Nandhini Anne & Sunday Usman"
 title-slide-attributes:
-  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-image: images/bg_img.png
   data-background-size: stretch
-  data-background-opacity: "0.7"
+  data-background-opacity: "0.5"
   data-slide-number: none
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
+    background-transition: fade
+    transition: zoom
+
 editor: visual
 jupyter: python3
 execute:
