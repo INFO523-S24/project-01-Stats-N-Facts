@@ -1,8 +1,8 @@
 {
-  "hash": "150b32db17d12b56d065ccadd7a5bec2",
+  "hash": "901668fa25eedb5d7dedc5291f2ce0b4",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: About\nformat: html\neditor: visual\n---\n\nThis project was developed by **Stats-N-Facts** For [INFO 523 - Data Mining and Discovery](https://datamineaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\n-   H M Abdul Fattah: Graduate Student, Major: Information Science\n\n-   Srinivasan Poonkundran: Graduate Student, Major: Data Science.\n\n-   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\n\n-   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\n\n-   Team member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\n\n",
+    "markdown": "---\ntitle: About\nformat: html\neditor: visual\n---\n\nThis project was developed by **Stats-N-Facts** For [INFO 523 - Data Mining and Discovery](https://datamineaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\n-   H M Abdul Fattah: Graduate Student, Major: Information Science\n\n-   Srinivasan Poonkundran: Graduate Student, Major: Data Science.\n\n-   Sunday Usman: Graduate Student, Major: Systems and Industrial Engineering.\n\n-   Shreemithra Naveen: Graduate Studen, Major: Data Science.\n\n-   Nandhini Anne: Graduate Student, Major :Data Science\n\n",
     "supporting": [
       "about_files\\figure-html"
     ],

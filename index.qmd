@@ -173,3 +173,7 @@ plt.show()
 ```
 
 ### Discussion
+
+While we examined the data, some interesting and fascinating developments in the filed of Hepatitis B therapy got our attention. For the people afflicted with this illness, it is seen that some few new medications has been licensed for the use of humans. For instance, Vaxelis, that was approved by MCM Vaccine B.V. on the February 20, 2023, gives out hopes and promises as an enhanced vaccination option against diseases, including Hepatitis B. This implies that efforts to further improve the efficacy of immunization programs should continue.
+
+Next are Hexacima and Hexyon, which Sanofi Pasteur authorized on January 6, 2023. These vaccinations are combo shots that offer more protection overall, especially against Hepatitis B. It's wonderful to see businesses like Sanofi Pasteur stepping up to provide thorough answers to such difficult medical problems. Furthermore, new oral antiviral medications such as Lamivudine from Teva and Viread from Gilead Sciences Ireland UC, which were both licensed in late 2022 and early 2023, demonstrate that several approaches are being investigated for the management of Hepatitis B. The fact that this disease is being combatted on several fronts is encouraging and gives sufferers hope for improved results.
