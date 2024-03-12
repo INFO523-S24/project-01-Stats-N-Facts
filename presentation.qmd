@@ -1,16 +1,17 @@
 ---
 title: "Exploring European Drug Development: COVID Vaccine Revisions and Recent Hepatitis B Medications"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
-author: "H M Abdul Fattah
-         Srinivasan Poonkundran
-         Shreemithra Naveen
-         Nandhini Anne
+author: "H M Abdul Fattah<br>
+         Srinivasan Poonkundran<br>
+         Shreemithra Naveen<br>
+         Nandhini Anne<br>
          Sunday Usman"
 title-slide-attributes:
   data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
   data-background-size: stretch
   data-background-opacity: "0.7"
   data-slide-number: none
+  
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
@@ -91,29 +92,124 @@ or in two columns
 ## Code
 
 ```{python}
-from sklearn.linear_model import LinearRegression
-import statsmodels.api as sm
+# Load Libraries
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import textwrap
 
-# Fit a linear regression model
-X = mtcars[['speed']]
-y = mtcars['mpg']
-model = LinearRegression().fit(X, y)
+# Read in the data
+url = 'data/drugs_dataset.csv'
+drugs = pd.read_csv(url)
 
-# Summary of the model
-X2 = sm.add_constant(X)
-est = sm.OLS(y, X2)
-est2 = est.fit()
-print(est2.summary())
+#drugs.head()
+
+## Question 1 Solution
+
+# Replace null values with empty string in 'therapeutic_area' column
+drugs['therapeutic_area'].fillna('', inplace=True)
+
+# Filter COVID vaccines based on 'therapeutic_area'
+covid_vaccines = drugs[drugs['therapeutic_area'].str.contains('COVID', case=False)]
+
+# Exclude medicines with conditions applied
+covid_vaccines = covid_vaccines[~covid_vaccines['conditional_approval']]
+
+# Filter the dataset to include only authorised medicines
+covid_vaccines = covid_vaccines[covid_vaccines['authorisation_status'] == 'authorised']
+
+# Sort the dataset based on 'revision_number' in descending order
+covid_vaccines_sorted = covid_vaccines.sort_values(by='revision_number', ascending=False)
+
+# Extract relevant columns ('medicine_name' and 'revision_number')
+vaccine_revisions = covid_vaccines_sorted[['revision_number', 'medicine_name', 'therapeutic_area']]
+
+# Top-5 data
+medicine_names = vaccine_revisions['medicine_name'][:5]
+revision_numbers = vaccine_revisions['revision_number'][:5]
+
+## Question 2 Solution
+
+# Replace null values with empty string in 'therapeutic_area' column
+drugs['therapeutic_area'].fillna('', inplace=True)
+
+# Filter the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable
+hepatitis_b_medicines = drugs[drugs['therapeutic_area'].str.contains('Hepatitis B', case=False)]
+
+# Filter the dataset to include only medicines for humans in the 'category' variable
+human_hepatitis_b_medicines = hepatitis_b_medicines[hepatitis_b_medicines['category'] == 'human']
+
+# Filter the dataset to include only authorised medicines
+authorised_hepatitis_b_medicines = human_hepatitis_b_medicines[human_hepatitis_b_medicines['authorisation_status'] == 'authorised']
+
+# Sort the dataset based on the 'revision_date' in descending order to get the most recently revised medicines
+recently_revised_medicines = authorised_hepatitis_b_medicines.sort_values(by='revision_date', ascending=False)
+
+# Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines
+top_5_result = recently_revised_medicines[['medicine_name', 'marketing_authorisation_holder_company_name', 'revision_date']].head(5)
+
+# Extract only the date part using string operations
+top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
+
+print(top_5_result)
+
+# Custom column labels
+custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
+
 ```
+
 
 ## Plots
 
 ```{python}
-penguins['species'] = penguins['species'].apply(lambda x: "Adelie" if x == "Adelie" else "Other")
-sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')
+## Question 1
+# Create a figure and axis object
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Create bar plot
+bars = ax.bar(medicine_names, revision_numbers, color='skyblue')
+
+# Set labels and title with customized font
+label_font = {'fontsize': 12, 'fontweight': 'bold'}
+title_font = {'fontsize': 16, 'fontweight': 'bold'}
+
+# Set labels and title
+ax.set_xlabel('Medicine Name', fontdict=label_font)
+ax.set_ylabel('Revision Number', fontdict=label_font)
+ax.set_title('\n Top 5 COVID vaccines that have undergone the most revisions \n', fontdict=title_font)
+
+# Wrap long medicine names into two lines
+wrapped_names = [textwrap.fill(name, width=25) for name in medicine_names]
+
+# Set tick labels with line breaks
+ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
+
+# Show plot
+plt.tight_layout()
+plt.show()
+
+## Question 2
+# Draw a table to display the result for question 2
+#plt.figure(figsize=(8, 2.5))
+table = plt.table(cellText=top_5_result.values,
+                  colLabels=custom_col_labels,
+                  loc='center',
+                  cellLoc='center',
+                  colColours=['skyblue']*len(top_5_result.columns),
+                  cellColours=[['lightgrey']*len(top_5_result.columns)]*len(top_5_result),
+                  fontsize=10)
+
+table.auto_set_font_size(False)
+table.set_fontsize(10)
+table.scale(1, 1.5)  # Adjust the scale to make the table more compact
+plt.axis('off')  # Turn off axis
+plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 14, 'fontweight': 'bold'})
 plt.show()
 ```
+```{python}
+
+```
+
 
 ## Plot and text
 
