@@ -11,7 +11,7 @@ format:
   revealjs:
     theme:  ['data/customtheming.scss']
     background-transition: fade
-    transition: zoom
+    transition: slide
 
 editor: visual
 jupyter: python3
