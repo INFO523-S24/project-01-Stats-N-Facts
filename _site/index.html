@@ -4755,18 +4755,24 @@ vertical-align: -.125em;
    
   <ul>
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#question1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied" id="toc-question1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied" class="nav-link" data-scroll-target="#question1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied">Question1-Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</a>
+  <li><a href="#question1" id="toc-question1" class="nav-link" data-scroll-target="#question1">Question1</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
   </ul></li>
-  <li><a href="#question-1-solution" id="toc-question-1-solution" class="nav-link" data-scroll-target="#question-1-solution">Question 1 Solution</a></li>
-  <li><a href="#question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b" id="toc-question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b" class="nav-link" data-scroll-target="#question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b">Question 2-What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</a>
+  <li><a href="#question-1-solution" id="toc-question-1-solution" class="nav-link" data-scroll-target="#question-1-solution">Question 1 Solution</a>
+  <ul class="collapse">
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  </ul></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a>
   <ul class="collapse">
   <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
   <li><a href="#approach-1" id="toc-approach-1" class="nav-link" data-scroll-target="#approach-1">Approach</a></li>
   </ul></li>
-  <li><a href="#question-2-solution" id="toc-question-2-solution" class="nav-link" data-scroll-target="#question-2-solution">Question 2 Solution</a></li>
+  <li><a href="#question-2-solution" id="toc-question-2-solution" class="nav-link" data-scroll-target="#question-2-solution">Question 2 Solution</a>
+  <ul class="collapse">
+  <li><a href="#discussion-1" id="toc-discussion-1" class="nav-link" data-scroll-target="#discussion-1">Discussion</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -4803,7 +4809,7 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
 <p>This dataset, an intricate mosaic sourced from the European Medicines Agency, encapsulates the multifaceted landscape of European drug development. Housing 1988 records and boasting 28 variables, it unfolds a comprehensive narrative of pharmaceutical products. From fundamental details like medicine categories, therapeutic areas, and active substances to nuanced insights encompassing patient safety indicators, authorization statuses, and regulatory nuances, the dataset is a treasure trove for those deciphering the complex journey from drug conception to authorization.</p>
 <p>Navigating through the dataset reveals crucial regulatory milestones, including marketing authorization dates, refusal details, and designations such as orphan medicine and accelerated assessment. The inclusion of variables indicating generic status, biosimilarity, and revision histories further enriches the dataset, offering a panoramic view of pharmaceutical endeavors in Europe. As we embark on the analysis of this dataset, our objective is to distill valuable insights, uncovering trends and correlations that underpin the intricate dance between regulation and innovation in European drug development.</p>
-<div id="6601803f" class="cell" data-execution_count="1">
+<div id="83b34f88" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Libraries</span></span>
@@ -4813,7 +4819,7 @@ vertical-align: -.125em;
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="13e23cec" class="cell" data-execution_count="2">
+<div id="85578e66" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the data</span></span>
@@ -4984,8 +4990,9 @@ vertical-align: -.125em;
 </div>
 </div>
 </section>
-<section id="question1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied" class="level2">
-<h2 class="anchored" data-anchor-id="question1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied">Question1-Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</h2>
+<section id="question1" class="level2">
+<h2 class="anchored" data-anchor-id="question1">Question1</h2>
+<p>Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</p>
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <p>In the dynamic landscape of pharmaceutical development, the ongoing refinement and adaptation of COVID vaccines are of paramount importance. As the global community grapples with the challenges posed by the COVID-19 pandemic, regulatory bodies continuously monitor and update the authorization details of vaccines to ensure their efficacy, safety, and adherence to evolving standards. Question 1 of this analysis aims to unravel the intricacies of COVID vaccine development by investigating which vaccines have undergone the most revisions while maintaining an approved authorization status with no applied conditions.</p>
@@ -4999,7 +5006,7 @@ vertical-align: -.125em;
 </section>
 <section id="question-1-solution" class="level2">
 <h2 class="anchored" data-anchor-id="question-1-solution">Question 1 Solution</h2>
-<div id="bf777e13" class="cell" data-execution_count="3">
+<div id="c9140b0c" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -5021,7 +5028,7 @@ vertical-align: -.125em;
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>vaccine_revisions <span class="op">=</span> covid_vaccines_sorted[[<span class="st">&#39;revision_number&#39;</span>, <span class="st">&#39;medicine_name&#39;</span>, <span class="st">&#39;therapeutic_area&#39;</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="8a8e29aa" class="cell" data-execution_count="4">
+<div id="b4997160" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top-5 data</span></span>
@@ -5061,9 +5068,15 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
+<section id="discussion" class="level3">
+<h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
+<p>The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 39 revisions out of the top 5 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech’s mRNA vaccine Comirnaty, which has undergone 36 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its thirty-four changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.</p>
+<p>These results highlight the iterative process involved in developing vaccines and the proactive approach taken by regulatory bodies in tackling new issues. The substantial amount of changes made to these top vaccines shows a dedication to ongoing adaptation and enhancement in the face of a quickly changing pandemic environment. Sustaining the efficacy of COVID vaccination campaigns and ultimately halting the virus’s spread would need constant watchfulness and adaptability as research progresses and new strains appear.</p>
 </section>
-<section id="question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b" class="level2">
-<h2 class="anchored" data-anchor-id="question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b">Question 2-What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</h2>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</p>
 <section id="introduction-1" class="level3">
 <h3 class="anchored" data-anchor-id="introduction-1">Introduction</h3>
 <p>The exploration of recent advancements in pharmaceuticals pertaining to Hepatitis B takes center stage. This inquiry delves into identifying the most recently released medicines authorized for human usage in the treatment of Hepatitis B. The dataset provides a diverse array of variables, crucial among them being ‘therapeutic_area,’ ‘category,’ ‘authorisation_status,’ ‘marketing_authorisation_holder_company_name,’ and ‘revision_date.’ To unravel the sought-after insights, the analysis focuses on medicines specifically designed for human usage in the category of Hepatitis B.</p>
@@ -5077,7 +5090,7 @@ vertical-align: -.125em;
 </section>
 <section id="question-2-solution" class="level2">
 <h2 class="anchored" data-anchor-id="question-2-solution">Question 2 Solution</h2>
-<div id="63841845" class="cell" data-execution_count="5">
+<div id="3bf33476" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -5112,7 +5125,7 @@ vertical-align: -.125em;
 535  Lamivudine Teva                                   Teva B.V.    2022-11-17</code></pre>
 </div>
 </div>
-<div id="8f9838a3" class="cell" data-execution_count="6">
+<div id="182151ed" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom column labels</span></span>
@@ -5143,8 +5156,11 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
+<section id="discussion-1" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-1">Discussion</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
