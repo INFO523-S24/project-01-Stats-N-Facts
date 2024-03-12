@@ -130,7 +130,6 @@ or in two columns
 ## Code
 
 ```{python}
-<<<<<<< HEAD
 # Load Libraries
 import numpy as np
 import pandas as pd
@@ -195,64 +194,13 @@ print(top_5_result)
 # Custom column labels
 custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
 
-=======
-## Question 1 solution
-# Replace null values with empty string in 'therapeutic_area' column
-drugs['therapeutic_area'].fillna('', inplace=True)
-
-# Filter COVID vaccines based on 'therapeutic_area'
-covid_vaccines = drugs[drugs['therapeutic_area'].str.contains('COVID', case=False)]
-
-# Exclude medicines with conditions applied
-covid_vaccines = covid_vaccines[~covid_vaccines['conditional_approval']]
-
-# Filter the dataset to include only authorised medicines
-covid_vaccines = covid_vaccines[covid_vaccines['authorisation_status'] == 'authorised']
-
-# Sort the dataset based on 'revision_number' in descending order
-covid_vaccines_sorted = covid_vaccines.sort_values(by='revision_number', ascending=False)
-
-# Extract relevant columns ('medicine_name' and 'revision_number')
-vaccine_revisions = covid_vaccines_sorted[['revision_number', 'medicine_name', 'therapeutic_area']]
-
-# Top-5 data
-medicine_names = vaccine_revisions['medicine_name'][:5]
-revision_numbers = vaccine_revisions['revision_number'][:5]
-
-## Question 2 solution
-# Replace null values with empty string in 'therapeutic_area' column
-drugs['therapeutic_area'].fillna('', inplace=True)
-
-# Filter the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable
-hepatitis_b_medicines = drugs[drugs['therapeutic_area'].str.contains('Hepatitis B', case=False)]
-
-# Filter the dataset to include only medicines for humans in the 'category' variable
-human_hepatitis_b_medicines = hepatitis_b_medicines[hepatitis_b_medicines['category'] == 'human']
-
-# Filter the dataset to include only authorised medicines
-authorised_hepatitis_b_medicines = human_hepatitis_b_medicines[human_hepatitis_b_medicines['authorisation_status'] == 'authorised']
-
-# Sort the dataset based on the 'revision_date' in descending order to get the most recently revised medicines
-recently_revised_medicines = authorised_hepatitis_b_medicines.sort_values(by='revision_date', ascending=False)
-
-# Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines
-top_5_result = recently_revised_medicines[['medicine_name', 'marketing_authorisation_holder_company_name', 'revision_date']].head(5)
-
-# Extract only the date part using string operations
-top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
->>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 ```
 
 
 ## Plots
 
 ```{python}
-<<<<<<< HEAD
 ## Question 1
-=======
-
-## Question 1 plot
->>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 # Create a figure and axis object
 fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -278,18 +226,9 @@ ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
 plt.tight_layout()
 plt.show()
 
-<<<<<<< HEAD
 ## Question 2
 # Draw a table to display the result for question 2
 #plt.figure(figsize=(8, 2.5))
-=======
-## Question 2 plot
-# Custom column labels
-custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
-
-# Draw a table to display the result
-plt.figure(figsize=(8, 2.5))
->>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 table = plt.table(cellText=top_5_result.values,
                   colLabels=custom_col_labels,
                   loc='center',
