@@ -4809,7 +4809,7 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
 <p>This dataset, an intricate mosaic sourced from the European Medicines Agency, encapsulates the multifaceted landscape of European drug development. Housing 1988 records and boasting 28 variables, it unfolds a comprehensive narrative of pharmaceutical products. From fundamental details like medicine categories, therapeutic areas, and active substances to nuanced insights encompassing patient safety indicators, authorization statuses, and regulatory nuances, the dataset is a treasure trove for those deciphering the complex journey from drug conception to authorization.</p>
 <p>Navigating through the dataset reveals crucial regulatory milestones, including marketing authorization dates, refusal details, and designations such as orphan medicine and accelerated assessment. The inclusion of variables indicating generic status, biosimilarity, and revision histories further enriches the dataset, offering a panoramic view of pharmaceutical endeavors in Europe. As we embark on the analysis of this dataset, our objective is to distill valuable insights, uncovering trends and correlations that underpin the intricate dance between regulation and innovation in European drug development.</p>
-<div id="83b34f88" class="cell" data-execution_count="1">
+<div id="8eec0423" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Libraries</span></span>
@@ -4819,7 +4819,7 @@ vertical-align: -.125em;
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> textwrap</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="85578e66" class="cell" data-execution_count="2">
+<div id="d2cd2ccd" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the data</span></span>
@@ -5006,7 +5006,7 @@ vertical-align: -.125em;
 </section>
 <section id="question-1-solution" class="level2">
 <h2 class="anchored" data-anchor-id="question-1-solution">Question 1 Solution</h2>
-<div id="c9140b0c" class="cell" data-execution_count="3">
+<div id="005acbaa" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -5028,7 +5028,7 @@ vertical-align: -.125em;
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>vaccine_revisions <span class="op">=</span> covid_vaccines_sorted[[<span class="st">&#39;revision_number&#39;</span>, <span class="st">&#39;medicine_name&#39;</span>, <span class="st">&#39;therapeutic_area&#39;</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="b4997160" class="cell" data-execution_count="4">
+<div id="f4060f18" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top-5 data</span></span>
@@ -5090,7 +5090,7 @@ vertical-align: -.125em;
 </section>
 <section id="question-2-solution" class="level2">
 <h2 class="anchored" data-anchor-id="question-2-solution">Question 2 Solution</h2>
-<div id="3bf33476" class="cell" data-execution_count="5">
+<div id="95c31505" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -5125,7 +5125,7 @@ vertical-align: -.125em;
 535  Lamivudine Teva                                   Teva B.V.    2022-11-17</code></pre>
 </div>
 </div>
-<div id="182151ed" class="cell" data-execution_count="6">
+<div id="46e23243" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom column labels</span></span>
@@ -5158,6 +5158,8 @@ vertical-align: -.125em;
 </div>
 <section id="discussion-1" class="level3">
 <h3 class="anchored" data-anchor-id="discussion-1">Discussion</h3>
+<p>While we examined the data, some interesting and fascinating developments in the filed of Hepatitis B therapy got our attention. For the people afflicted with this illness, it is seen that some few new medications has been licensed for the use of humans. For instance, Vaxelis, that was approved by MCM Vaccine B.V. on the February 20, 2023, gives out hopes and promises as an enhanced vaccination option against diseases, including Hepatitis B. This implies that efforts to further improve the efficacy of immunization programs should continue.</p>
+<p>Next are Hexacima and Hexyon, which Sanofi Pasteur authorized on January 6, 2023. These vaccinations are combo shots that offer more protection overall, especially against Hepatitis B. It’s wonderful to see businesses like Sanofi Pasteur stepping up to provide thorough answers to such difficult medical problems. Furthermore, new oral antiviral medications such as Lamivudine from Teva and Viread from Gilead Sciences Ireland UC, which were both licensed in late 2022 and early 2023, demonstrate that several approaches are being investigated for the management of Hepatitis B. The fact that this disease is being combatted on several fronts is encouraging and gives sufferers hope for improved results.</p>
 
 
 </section>
