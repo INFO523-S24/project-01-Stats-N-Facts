@@ -11,8 +11,8 @@ This project was developed by **Stats-N-Facts** For [INFO 523 - Data Mining and 
 
 -   Srinivasan Poonkundran: Graduate Student, Major: Data Science.
 
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
+-   Sunday Usman: Graduate Student, Major: Systems and Industrial Engineering.
 
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
+-   Shreemithra Naveen: Graduate Studen, Major: Data Science.
 
--   Team member 5: One sentence description of Team member 4 (e.g., year, major, etc.).
+-   Nandhini Anne: Graduate Student, Major :Data Science
