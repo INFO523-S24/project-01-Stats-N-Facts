@@ -1,15 +1,11 @@
 ---
 title: "Exploring European Drug Development"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
-<<<<<<< HEAD
 author: "H M Abdul Fattah<br>
          Srinivasan Poonkundran<br>
          Shreemithra Naveen<br>
          Nandhini Anne<br>
          Sunday Usman"
-=======
-author: "H M Abdul Fattah, Srinivasan Poonkundran, Shreemithra Naveen, Nandhini Anne & Sunday Usman"
->>>>>>> 679aa841b9d4c842e1aa99775448eda1065ce541
 title-slide-attributes:
   data-background-image: images/bg_img.png
   data-background-size: stretch
