@@ -58,6 +58,7 @@ Answering question 1 requires the use of the following variables:
 | authorisation_status | The authorization status of the medicine |
 | conditional_approval | Indicator if conditional approval is applied |
 | revision_number      | The number of revisions for the medicine |
+|                      |                                          |
 
 ## Approach for answering question 1: {style="font-size: 0.7em;"}
 
@@ -66,7 +67,7 @@ Answering question 1 requires the use of the following variables:
 3.  Sorted the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.<br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
 
-## Question 1 Solution {style="font-size: 0.6em;"}
+## Question 1 Solution {style="font-size: 0.5em;"}
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -121,16 +122,19 @@ plt.show()
 
 The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.
 
-## Question 2: What are the most recently released medicines (name and company) authorized for human usage for 'Hepatitis B'? {style="font-size: 0.7em;"}
+## Question 2: What are the most recently released medicines (name and company) authorized for human usage for 'Hepatitis B'? {style="font-size: 0.6em;"}
 
 Answering question 2 requires the use of the following variables: 
 
 |  Column Name         |         Description            |
 |----------------------|--------------------------------|
+| category        | The category (human or veterinary) of the medicine |
 | medicine_name        | The brand name of the medicine |
 | therapeutic_area     | The therapeutic area for which the medicine is authorized |
-
-... add more 
+| authorisation_status     | The authorization status of the medicine |
+| marketing_authorisation_holder_company_name        | The company holding the marketing authorization for the medicine |
+| revision_date     | The date of the latest revision for the medicine |
+|                   |                                                  |
 
 ## Approach for answering question 2: {style="font-size: 0.7em;"}
 
@@ -186,180 +190,10 @@ plt.title('Most recently released Hepatitis B medicines \n authorized for human 
 plt.show()
 ```
 
-The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.
+The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.
 
-## Layouts
-
-You can use plain text
-
-::: columns
-::: {.column width="40%"}
--   or bullet points[^1]
-:::
-
-::: {.column width="60%"}
-or in two columns
-:::
-:::
-
-[^1]: And add footnotes
-
--   like
-
--   this
-
-## Plots
-
-```{python}
-## Question 1
-# Create a figure and axis object
-fig, ax = plt.subplots(figsize=(10, 6))
-
-# Create bar plot
-bars = ax.bar(medicine_names, revision_numbers, color='skyblue')
-
-# Set labels and title with customized font
-label_font = {'fontsize': 12, 'fontweight': 'bold'}
-title_font = {'fontsize': 16, 'fontweight': 'bold'}
-
-# Set labels and title
-ax.set_xlabel('Medicine Name', fontdict=label_font)
-ax.set_ylabel('Revision Number', fontdict=label_font)
-ax.set_title('\n Top 5 COVID vaccines that have undergone the most revisions \n', fontdict=title_font)
-
-# Wrap long medicine names into two lines
-wrapped_names = [textwrap.fill(name, width=25) for name in medicine_names]
-
-# Set tick labels with line breaks
-ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
-
-# Show plot
-plt.tight_layout()
-plt.show()
-
-## Question 2
-# Draw a table to display the result for question 2
-#plt.figure(figsize=(8, 2.5))
-table = plt.table(cellText=top_5_result.values,
-                  colLabels=custom_col_labels,
-                  loc='center',
-                  cellLoc='center',
-                  colColours=['skyblue']*len(top_5_result.columns),
-                  cellColours=[['lightgrey']*len(top_5_result.columns)]*len(top_5_result),
-                  fontsize=10)
-
-table.auto_set_font_size(False)
-table.set_fontsize(10)
-table.scale(1, 1.5)  # Adjust the scale to make the table more compact
-plt.axis('off')  # Turn off axis
-plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 14, 'fontweight': 'bold'})
-plt.show()
-```
-```{python}
-
-```
-
-
-## Plot and text
-
-::: columns
-::: {.column width="50%"}
--   Some text
-
--   goes here
-:::
-
-::: {.column width="50%"}
-```{python}
-#| warning: false
-#| fig.width: 5.5
-
-## Question 1 plot
-# Create a figure and axis object
-fig, ax = plt.subplots(figsize=(10, 6))
-
-# Create bar plot
-bars = ax.bar(medicine_names, revision_numbers, color='skyblue')
-
-# Set labels and title with customized font
-label_font = {'fontsize': 12, 'fontweight': 'bold'}
-title_font = {'fontsize': 16, 'fontweight': 'bold'}
-
-# Set labels and title
-ax.set_xlabel('Medicine Name', fontdict=label_font)
-ax.set_ylabel('Revision Number', fontdict=label_font)
-ax.set_title('\n Top 5 COVID vaccines that have undergone the most revisions \n', fontdict=title_font)
-
-# Wrap long medicine names into two lines
-wrapped_names = [textwrap.fill(name, width=25) for name in medicine_names]
-
-# Set tick labels with line breaks
-ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
-
-# Show plot
-plt.tight_layout()
-plt.show()
-
-## Question 2 plot
-# Custom column labels
-custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
-
-# Draw a table to display the result
-plt.figure(figsize=(8, 2.5))
-table = plt.table(cellText=top_5_result.values,
-                  colLabels=custom_col_labels,
-                  loc='center',
-                  cellLoc='center',
-                  colColours=['skyblue']*len(top_5_result.columns),
-                  cellColours=[['lightgrey']*len(top_5_result.columns)]*len(top_5_result),
-                  fontsize=10)
-
-table.auto_set_font_size(False)
-table.set_fontsize(10)
-table.scale(1, 1.5)  # Adjust the scale to make the table more compact
-plt.axis('off')  # Turn off axis
-plt.title('Most recently released Hepatitis B medicines \n authorized for human usage', fontdict={'fontsize': 14, 'fontweight': 'bold'})
-plt.show()
-```
-:::
-:::
-
-# A new section...
-
-## Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{python}
-
-```
-
-## Images
-
-![Image credit: Danielle Navarro, Percolate.](images/watercolour_sys02_img34_teacup-ocean.png){fig-align="center" width="500"}
-
-## Math Expressions {.smaller}
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. \$\\alpha+\\beta\$ renders $\alpha + \beta$. You can use the display style with double dollar signs:
-
-```         
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$
-\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-$$
-
-Limitations:
+## Limitations:
 
 1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
 
 2.  There should not be spaces after the opening `$` or before the closing `$`.
-
-# Wrap up
-
-## Feeling adventurous?
-
--   You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
-
--   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.
