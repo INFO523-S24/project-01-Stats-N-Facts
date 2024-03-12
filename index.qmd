@@ -100,11 +100,12 @@ ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
 # Show plot
 plt.tight_layout()
 plt.show()
+
 ```
 
 ### Discussion
 
-The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 39 revisions out of the top 5 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech's mRNA vaccine Comirnaty, which has undergone 36 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its thirty-four changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.
+The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 40 revisions out of the top 5 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech's mRNA vaccine Comirnaty, which has undergone 38 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its 35 changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.
 
 These results highlight the iterative process involved in developing vaccines and the proactive approach taken by regulatory bodies in tackling new issues. The substantial amount of changes made to these top vaccines shows a dedication to ongoing adaptation and enhancement in the face of a quickly changing pandemic environment. Sustaining the efficacy of COVID vaccination campaigns and ultimately halting the virus's spread would need constant watchfulness and adaptability as research progresses and new strains appear.
 
