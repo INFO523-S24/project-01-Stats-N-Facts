@@ -219,7 +219,6 @@ plt.show()
 :::
 
 ## Limitations: {style="font-size: 0.7em;"}
-::: incremental
 
 -  As our project is focused on current datasets encompassing drugs for COVID and hepatitis B, we can think of  utilizing ML models for predicting future changes in drugs.
 
