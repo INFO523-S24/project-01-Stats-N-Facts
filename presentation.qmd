@@ -1,6 +1,6 @@
 ---
 title: "Exploring European Drug Development"
-subtitle: "INFO 523 - Spring 2023 - Project 1"
+subtitle: "Team: Stats N Facts<br>INFO 523 - Spring 2023 - Project 1"
 author: "H M Abdul Fattah<br>
          Srinivasan Poonkundran<br>
          Shreemithra Naveen<br>
@@ -223,7 +223,7 @@ plt.show()
 -  As our project is focused on current datasets encompassing drugs for COVID and hepatitis B, we can think of  utilizing ML models for predicting future changes in drugs.
 
 -  For COVID-19, we are focusing on medicine which have undergone most revisions but this doesn't necessarily tell us about their quality or level of advancement.
-
+:::
 
 ## 
 
