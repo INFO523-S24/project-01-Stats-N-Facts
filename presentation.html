@@ -341,16 +341,18 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </section>
 <section id="introduction" class="slide level2 scrollable" style="font-size: 0.7em;">
 <h2>Introduction</h2>
+<div>
 <ul>
-<li>The evolution of drug development are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.</li>
-<li>An indepth understanding of the evolving nature of drugs can greatly contribute to the current and ongoing research advancements in the health domain and carefully guide the government in making efficient health policies.</li>
-<li>The dataset of interest was collected by the European Medicines Agency and contains 1988 rows and 28 columns, including numerical and categorical variables.</li>
-<li>With our dataset, we will be answering two questions:
+<li class="fragment">The evolution of drug development are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.</li>
+<li class="fragment">An indepth understanding of the evolving nature of drugs can greatly contribute to the current and ongoing research advancements in the health domain and carefully guide the government in making efficient health policies.</li>
+<li class="fragment">The dataset of interest was collected by the European Medicines Agency and contains 1988 rows and 28 columns, including numerical and categorical variables.</li>
+<li class="fragment">With our dataset, we will be answering two questions:
 <ol type="1">
-<li>What COVID vaccines has undergone the most revisions while maintaining approved authorization status?</li>
-<li>What are the recently released medicine for Hepatitis B?</li>
+<li class="fragment">What COVID vaccines has undergone the most revisions while maintaining approved authorization status?</li>
+<li class="fragment">What are the recently released medicine for Hepatitis B?</li>
 </ol></li>
 </ul>
+</div>
 </section>
 <section id="question-1" class="slide level2" style="font-size: 0.7em;">
 <h2>Question 1:</h2>
@@ -397,7 +399,9 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </section>
 <section id="approach" class="slide level2" style="font-size: 0.7em;">
 <h2>Approach</h2>
+<div>
 <p><br> 1. Filtered the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable.<br><br> 2. Excluded medicines with conditions applied in the ‘conditional_approval’ variable.<br><br> 3. Sorted the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions.<br><br> 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines.</p>
+</div>
 </section>
 <section id="top-5-covid-vaccines-with-the-most-revisions." class="slide level2" style="font-size: 0.65em;">
 <h2>Top 5 COVID vaccines with the most revisions.</h2>
@@ -405,11 +409,11 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Analysis</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div id="ca5ae2ac" class="cell" data-execution_count="3">
+<div id="8359a5e0" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/cell-4-output-1.png" width="795" height="473"></p>
+<p><img data-src="presentation_files/figure-html/cell-4-output-1.png" width="795" height="473"></p>
 </figure>
 </div>
 </div>
@@ -472,7 +476,9 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </section>
 <section id="approach-1" class="slide level2" style="font-size: 0.7em;">
 <h2>Approach</h2>
+<div>
 <p><br> 1. Filtered the dataset to include only medicines related to ‘Hepatitis B’ in the ‘therapeutic_area’ variable. <br><br> 2. Filtered the dataset to include only medicines for humans in the ‘category’ variable. <br><br> 3. Sorted the dataset based on the ‘revision_date’ in descending order to get the most recently revised medicines. <br><br> 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘marketing_authorisation_holder_company_name’) for the most recently revised medicines.</p>
+</div>
 </section>
 <section id="the-latest-hepatitis-medicines-approved-for-human-use." class="slide level2" style="font-size: 0.7em;">
 <h2>The latest Hepatitis medicines approved for human use.</h2>
@@ -480,11 +486,11 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Plot</a></li><li><a href="#tabset-2-2">Analysis</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div id="2cfa96d4" class="cell" data-execution_count="5">
+<div id="76e7ac4f" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/cell-6-output-1.png" width="912" height="434"></p>
+<p><img data-src="presentation_files/figure-html/cell-6-output-1.png" width="912" height="434"></p>
 </figure>
 </div>
 </div>
@@ -500,10 +506,14 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </section>
 <section id="limitations" class="slide level2" style="font-size: 0.7em;">
 <h2>Limitations:</h2>
+<p>::: incremental</p>
 <ul>
-<li><p>The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting <code>$$</code> must appear in the very beginning of a line, followed immediately by a non-space character, and the ending <code>$$</code> must be at the end of a line, led by a non-space character;</p></li>
-<li><p>There should not be spaces after the opening <code>$</code> or before the closing <code>$</code>.</p></li>
+<li><p>As our project is focused on current datasets encompassing drugs for COVID and hepatitis B, we can think of utilizing ML models for predicting future changes in drugs.</p></li>
+<li><p>For COVID-19, we are focusing on medicine which have undergone most revisions but this doesn’t necessarily tell us about their quality or level of advancement.</p></li>
 </ul>
+</section>
+<section id="thank-you" class="slide level2">
+<h2>Thank you</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/thank-you-dog.gif" class="quarto-figure quarto-figure-center"></p>
