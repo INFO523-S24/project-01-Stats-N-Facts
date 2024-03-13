@@ -80,7 +80,7 @@ revision_numbers = vaccine_revisions['revision_number'][:5]
 medicine_names = [re.sub(r'\([^()]*\)', '', name).strip() for name in medicine_names]
 
 # Create a figure and axis object
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(8, 5))
 
 # Create bar plot
 bars = ax.bar(medicine_names, revision_numbers, color='skyblue')
