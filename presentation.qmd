@@ -80,7 +80,7 @@ Answering question 1 requires the use of the following variables: <br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
 :::
 
-## Top 5 COVID vaccines with the most revisions. {style="font-size: 0.65em;"}
+## Top 5 COVID vaccines with the most revisions {style="font-size: 0.65em;"}
 ::: panel-tabset
 ### Plot 
 
@@ -166,7 +166,7 @@ Answering question 2 requires the use of the following variables: <br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
 :::
 
-## The latest Hepatitis medicines approved for human use. {style="font-size: 0.7em;"}
+## The latest Hepatitis medicines approved for human use {style="font-size: 0.7em;"}
 ::: panel-tabset
 ### Plot 1
 

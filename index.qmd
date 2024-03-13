@@ -19,7 +19,7 @@ This dataset, an intricate mosaic sourced from the European Medicines Agency, en
 
 Navigating through the dataset reveals crucial regulatory milestones, including marketing authorization dates, refusal details, and designations such as orphan medicine and accelerated assessment. The inclusion of variables indicating generic status, biosimilarity, and revision histories further enriches the dataset, offering a panoramic view of pharmaceutical endeavors in Europe. As we embark on the analysis of this dataset, our objective is to distill valuable insights, uncovering trends and correlations that underpin the intricate dance between regulation and innovation in European drug development.
 
-```{python}
+```{python import libraries}
 # Load Libraries
 import numpy as np
 import pandas as pd
@@ -29,7 +29,7 @@ import re
 import seaborn as sns
 ```
 
-```{python}
+```{python load dataset}
 # Read in the data
 url = 'data/drugs_dataset.csv'
 drugs = pd.read_csv(url)
@@ -53,7 +53,7 @@ Following data preparation and sorting, the extraction of pertinent columns ('me
 
 ## Question 1 Solution
 
-```{python}
+```{python question 1 plot}
 # Replace null values with empty string in 'therapeutic_area' column
 drugs['therapeutic_area'].fillna('', inplace=True)
 
@@ -131,7 +131,7 @@ Following the data preparation steps, the approach shifts to visualization, empl
 
 ## Question 2 Solution
 
-```{python}
+```{python question 2 wrangling}
 # Replace null values with empty string in 'therapeutic_area' column
 drugs['therapeutic_area'].fillna('', inplace=True)
 
@@ -156,7 +156,7 @@ top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
 #print(top_5_result)
 ```
 
-```{python}
+```{python question 2 plot 1}
 # Custom column labels
 custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
 
@@ -178,7 +178,7 @@ plt.title('Most recently released Hepatitis B medicines \n authorized for human 
 plt.show()
 ```
 
-```{python}
+```{python question 2 plot 2}
 
 # List of specific Hepatitis B medicines from the drugs dataset
 specific_medicines = [
