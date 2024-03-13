@@ -30,7 +30,7 @@ execute:
 editor_options:
     chunk_output_type: console
 ---
-```{python}
+```{python import libraries}
 # Load Libraries
 import numpy as np
 import pandas as pd
@@ -39,7 +39,7 @@ import textwrap
 import re
 ```
 
-```{python}
+```{python import dataset}
 # Read in the data
 url = 'data/drugs_dataset.csv'
 drugs = pd.read_csv(url)
@@ -84,7 +84,7 @@ Answering question 1 requires the use of the following variables: <br><br>
 ::: panel-tabset
 ### Plot 
 
-```{python}
+```{python question 1}
 # Replace null values with empty string in 'therapeutic_area' column
 drugs['therapeutic_area'].fillna('', inplace=True)
 
@@ -136,6 +136,7 @@ ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
 plt.tight_layout()
 plt.show()
 ```
+
 ### Analysis
 - The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.
 :::
@@ -169,7 +170,7 @@ Answering question 2 requires the use of the following variables: <br>
 ::: panel-tabset
 ### Plot 1
 
-```{python}
+```{python data wrangling question 2}
 # Replace null values with empty string in 'therapeutic_area' column
 drugs['therapeutic_area'].fillna('', inplace=True)
 
@@ -192,7 +193,7 @@ top_5_result = recently_revised_medicines[['medicine_name', 'marketing_authorisa
 top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
 ```
 
-```{python}
+```{python question 2 plot 1}
 # Custom column labels
 custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
 
@@ -216,7 +217,7 @@ plt.show()
 
 ### Plot 2
 
-```{python questoin 2 plot 2}
+```{python question 2 plot 2}
 # List of specific Hepatitis B medicines from the drugs dataset
 specific_medicines = [
     'Baraclude',
