@@ -77,7 +77,9 @@ Answering question 1 requires the use of the following variables: <br><br>
 2.  Excluded medicines with conditions applied in the 'conditional_approval' variable.<br><br>
 3.  Sorted the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.<br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
-## Plot {style="font-size: 0.65em;"}
+
+
+## Top 5 COVID vaccines with the most revisions. {style="font-size: 0.65em;"}
 ::: panel-tabset
 ### Plot 
 
@@ -160,7 +162,7 @@ Answering question 2 requires the use of the following variables: <br>
 3.  Sorted the dataset based on the 'revision_date' in descending order to get the most recently revised medicines. <br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
 
-## Plot {style="font-size: 0.7em;"}
+## The latest Hepatitis medicines approved for human use. {style="font-size: 0.7em;"}
 ::: panel-tabset
 ### Plot
 
@@ -219,5 +221,4 @@ plt.show()
 
 -  There should not be spaces after the opening `$` or before the closing `$`.
 
-## Thank you {style="text-align: center"}
 ![](images/thank-you-dog.gif){fig-align="center"}
