@@ -75,8 +75,9 @@ Answering question 1 requires the use of the following variables: <br><br>
 2.  Excluded medicines with conditions applied in the 'conditional_approval' variable.<br><br>
 3.  Sorted the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.<br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
-
-### Plot {style="font-size: 0.65em;"}
+## Plot {style="font-size: 0.65em;"}
+::: panel-tabset
+### Plot 
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -131,7 +132,7 @@ plt.show()
 ```
 ### Analysis
 - The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.
-
+:::
 ## Question 2:  {style="font-size: 0.7em;"}
 
 **What are the most recently released medicines (name and company) authorized for human usage for 'Hepatitis B'?**
@@ -157,7 +158,9 @@ Answering question 2 requires the use of the following variables: <br>
 3.  Sorted the dataset based on the 'revision_date' in descending order to get the most recently revised medicines. <br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
 
-### Plot {style="font-size: 0.7em;"}
+## Plot {style="font-size: 0.7em;"}
+::: panel-tabset
+### Plot
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -206,6 +209,7 @@ plt.show()
 ### Analysis
 
 - The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.
+:::
 
 ## Limitations: {style="font-size: 0.7em;"}
 
