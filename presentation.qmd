@@ -46,7 +46,7 @@ drugs = pd.read_csv(url)
 ```
 
 ## Introduction {style="font-size: 0.7em;"}
-:::incremental
+::: incremental
 - The evolution of drug development are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.
 - An indepth understanding of the evolving nature of drugs can greatly contribute to the current and ongoing research advancements in the health domain and carefully guide the government in making efficient health policies.
 - The dataset of interest was collected by the European Medicines Agency and contains 1988 rows and 28 columns, including numerical and categorical variables.
@@ -71,7 +71,7 @@ Answering question 1 requires the use of the following variables: <br><br>
 |                      |                                          |
 
 ## Approach {style="font-size: 0.7em;"}
-:::incremental
+::: incremental
 
 <br>
 1.  Filtered the dataset to include only COVID vaccines based on 'therapeutic_area' variable.<br><br>
@@ -159,7 +159,7 @@ Answering question 2 requires the use of the following variables: <br>
 |                   |                                                  |
 
 ## Approach {style="font-size: 0.7em;"}
-:::incremental
+::: incremental
 <br>
 1.  Filtered the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable. <br><br>
 2.  Filtered the dataset to include only medicines for humans in the 'category' variable. <br><br>
@@ -221,7 +221,7 @@ plt.show()
 :::
 
 ## Limitations: {style="font-size: 0.7em;"}
-:::incremental
+::: incremental
 
 -  As our project is focused on current datasets encompassing drugs for COVID and hepatitis B, we can think of  utilizing ML models for predicting future changes in drugs.
 
