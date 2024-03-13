@@ -16,7 +16,7 @@ format:
   revealjs:
     theme:  ['data/customtheming.scss']
     background-transition: fade
-    transition: convex
+    transition: slide
     auto-animate-duration: 1.5
     scrollable: true
     logo: images/EMA_Logo.png
