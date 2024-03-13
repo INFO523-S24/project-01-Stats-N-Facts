@@ -17,11 +17,16 @@ format:
     theme:  ['data/customtheming.scss']
     background-transition: fade
     transition: convex
+    auto-animate-duration: 1.5
 
 editor: visual
 jupyter: python3
 execute:
   echo: false
+  warning: false
+  message:false
+editor_options:
+    chunk_output_type: console
 ---
 ```{python}
 # Load Libraries
