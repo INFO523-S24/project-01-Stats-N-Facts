@@ -221,4 +221,6 @@ plt.show()
 
 -  There should not be spaces after the opening `$` or before the closing `$`.
 
+## 
+
 ![](images/thank-you-dog.gif){fig-align="center"}
