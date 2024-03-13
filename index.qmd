@@ -76,6 +76,9 @@ vaccine_revisions = covid_vaccines_sorted[['revision_number', 'medicine_name', '
 medicine_names = vaccine_revisions['medicine_name'][:5]
 revision_numbers = vaccine_revisions['revision_number'][:5]
 
+# Remove content within parentheses
+medicine_names = [re.sub(r'\([^()]*\)', '', name).strip() for name in medicine_names]
+
 # Create a figure and axis object
 fig, ax = plt.subplots(figsize=(10, 6))
 
@@ -148,7 +151,7 @@ top_5_result = recently_revised_medicines[['medicine_name', 'marketing_authorisa
 # Extract only the date part using string operations
 top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
 
-print(top_5_result)
+#print(top_5_result)
 ```
 
 ```{python}
