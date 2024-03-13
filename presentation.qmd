@@ -167,7 +167,7 @@ Answering question 2 requires the use of the following variables: <br>
 
 ## The latest Hepatitis medicines approved for human use. {style="font-size: 0.7em;"}
 ::: panel-tabset
-### Plot
+### Plot 1
 
 ```{python}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -213,6 +213,54 @@ plt.axis('off')  # Turn off axis
 plt.title('Most recently released Hepatitis B medicines \n authorized for human usage \n', fontdict={'fontsize': 18, 'fontweight': 'bold'})
 plt.show()
 ```
+
+### Plot 2
+
+```{python questoin 2 plot 2}
+# List of specific Hepatitis B medicines from the drugs dataset
+specific_medicines = [
+    'Baraclude',
+    'Entecavir Accord',
+    'Entecavir Mylan',
+    'Hepsera',
+    'Heplisav B',
+    'Lamivudine Teva',
+    'Sebivo',
+    'Vemlidy',
+    'Viread',
+    'Zeffix'
+]
+
+# Filter for rows where 'medicine_name' is in the list of specific medicines
+filtered_hepB_drugs = drugs[drugs['medicine_name'].isin(specific_medicines)]
+
+# Convert 'revision_date' to datetime 
+filtered_hepB_drugs['revision_date'] = pd.to_datetime(filtered_hepB_drugs['revision_date'])
+
+# Ensure the data is sorted by 'revision_date'
+filtered_hepB_drugs = filtered_hepB_drugs.sort_values('revision_date')
+
+# Pivot table to reshape the DataFrame for plotting
+pivot_df_filtered = filtered_hepB_drugs.pivot_table(index = 'revision_date', columns = 'medicine_name', values = 'revision_number', aggfunc = 'sum', fill_value = 0)
+
+# Cumulative sum for each medicine to get cumulative revisions over time
+cumulative_revisions_filtered = pivot_df_filtered.cumsum()
+
+# Plotting
+plt.figure(figsize = (12, 6))
+plt.stackplot(cumulative_revisions_filtered.index, cumulative_revisions_filtered.T, labels=cumulative_revisions_filtered.columns, alpha = 0.5)
+
+# Adding labels and title
+plt.title('Cumulative Revisions of Selected Hepatitis B Medicines Over Time')
+plt.xlabel('Months in 2021-2022')
+plt.ylabel('Cumulative Revisions')
+plt.legend(loc = 'upper left', fontsize = 'small')
+plt.tight_layout()  
+
+plt.show()
+
+```
+
 ### Analysis
 
 - The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.
