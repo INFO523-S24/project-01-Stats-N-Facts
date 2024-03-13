@@ -104,7 +104,7 @@ covid_vaccines_sorted = covid_vaccines.sort_values(by='revision_number', ascendi
 # Extract relevant columns ('medicine_name' and 'revision_number')
 vaccine_revisions = covid_vaccines_sorted[['revision_number', 'medicine_name', 'therapeutic_area']]
 
-# Top-5 data
+# Top-10 data
 medicine_names = vaccine_revisions['medicine_name'][:10]
 revision_numbers = vaccine_revisions['revision_number'][:10]
 
@@ -187,10 +187,10 @@ authorised_hepatitis_b_medicines = human_hepatitis_b_medicines[human_hepatitis_b
 recently_revised_medicines = authorised_hepatitis_b_medicines.sort_values(by='revision_date', ascending=False)
 
 # Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines
-top_5_result = recently_revised_medicines[['medicine_name', 'marketing_authorisation_holder_company_name', 'revision_date']].head(5)
+top_10_result = recently_revised_medicines[['medicine_name', 'marketing_authorisation_holder_company_name', 'revision_date']].head(5)
 
 # Extract only the date part using string operations
-top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
+top_10_result['revision_date'] = top_10_result['revision_date'].str[:10]
 ```
 
 ```{python question 2 plot 1}
@@ -199,12 +199,12 @@ custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
 
 # Draw a table to display the result
 plt.figure(figsize=(12, 4.5))
-table = plt.table(cellText=top_5_result.values,
+table = plt.table(cellText=top_10_result.values,
                   colLabels=custom_col_labels,
                   loc='center',
                   cellLoc='center',
-                  colColours=['skyblue']*len(top_5_result.columns),
-                  cellColours=[['lightgrey']*len(top_5_result.columns)]*len(top_5_result),
+                  colColours=['skyblue']*len(top_10_result.columns),
+                  cellColours=[['lightgrey']*len(top_10_result.columns)]*len(top_10_result),
                   fontsize=10)
 
 table.auto_set_font_size(False)

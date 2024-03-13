@@ -48,7 +48,7 @@ This inquiry is particularly pertinent in understanding the regulatory response 
 ### Approach
 The strategy to uncover COVID vaccines with the most revisions while maintaining approved authorization status and devoid of applied conditions involves a systematic process of data preparation, filtering, and visualization. Beginning with imputation to handle null values in the 'therapeutic_area' column, the dataset is refined by filtering out drugs related to COVID, creating a specialized subset focused on vaccines for the virus. Subsequent steps include the filtration of the dataset to exclusively include authorized medicines and sorting based on 'revision_number' in descending order. This sequential arrangement positions vaccines with the highest revision numbers at the forefront, providing valuable insights into their dynamic regulatory trajectory.
 
-Following data preparation and sorting, the extraction of pertinent columns ('medicine_name', 'revision_number', 'therapeutic_area') lays the groundwork for a visually impactful bar plot. This visualization method, chosen for its clarity and interpretability, showcases the top 5 COVID vaccines with the most revisions. The use of color in the plot not only enhances visual appeal but also aids in distinguishing between different vaccines. By amalgamating imputation, filtering, sorting, and visualization techniques, this approach facilitates a comprehensive exploration, offering a nuanced understanding of the regulatory nuances and adaptations of these critical COVID vaccines.
+Following data preparation and sorting, the extraction of pertinent columns ('medicine_name', 'revision_number', 'therapeutic_area') lays the groundwork for a visually impactful bar plot. This visualization method, chosen for its clarity and interpretability, showcases the top 10 COVID vaccines with the most revisions. The use of color in the plot not only enhances visual appeal but also aids in distinguishing between different vaccines. By amalgamating imputation, filtering, sorting, and visualization techniques, this approach facilitates a comprehensive exploration, offering a nuanced understanding of the regulatory nuances and adaptations of these critical COVID vaccines.
 
 
 ### Analysis
@@ -110,7 +110,7 @@ plt.show()
 
 ### Discussion
 
-The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 40 revisions out of the top 5 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech's mRNA vaccine Comirnaty, which has undergone 38 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its 35 changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.
+The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 40 revisions out of the top 10 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech's mRNA vaccine Comirnaty, which has undergone 38 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its 35 changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.
 
 These results highlight the iterative process involved in developing vaccines and the proactive approach taken by regulatory bodies in tackling new issues. The substantial amount of changes made to these top vaccines shows a dedication to ongoing adaptation and enhancement in the face of a quickly changing pandemic environment. Sustaining the efficacy of COVID vaccination campaigns and ultimately halting the virus's spread would need constant watchfulness and adaptability as research progresses and new strains appear.
 
@@ -149,12 +149,12 @@ authorised_hepatitis_b_medicines = human_hepatitis_b_medicines[human_hepatitis_b
 recently_revised_medicines = authorised_hepatitis_b_medicines.sort_values(by='revision_date', ascending=False)
 
 # Extract and display the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines
-top_5_result = recently_revised_medicines[['medicine_name', 'marketing_authorisation_holder_company_name', 'revision_date']].head(5)
+top_10_result = recently_revised_medicines[['medicine_name', 'marketing_authorisation_holder_company_name', 'revision_date']].head(5)
 
 # Extract only the date part using string operations
-top_5_result['revision_date'] = top_5_result['revision_date'].str[:10]
+top_10_result['revision_date'] = top_10_result['revision_date'].str[:10]
 
-#print(top_5_result)
+#print(top_10_result)
 ```
 
 ```{python question 2 plot 1}
@@ -163,12 +163,12 @@ custom_col_labels = ['Medicine Name', 'Company Name', 'Revision Date']
 
 # Draw a table to display the result
 plt.figure(figsize=(8, 2.5))
-table = plt.table(cellText=top_5_result.values,
+table = plt.table(cellText=top_10_result.values,
                   colLabels=custom_col_labels,
                   loc='center',
                   cellLoc='center',
-                  colColours=['skyblue']*len(top_5_result.columns),
-                  cellColours=[['lightgrey']*len(top_5_result.columns)]*len(top_5_result),
+                  colColours=['skyblue']*len(top_10_result.columns),
+                  cellColours=[['lightgrey']*len(top_10_result.columns)]*len(top_10_result),
                   fontsize=10)
 
 table.auto_set_font_size(False)
