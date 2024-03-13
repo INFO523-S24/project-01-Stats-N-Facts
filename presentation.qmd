@@ -18,6 +18,7 @@ format:
     background-transition: fade
     transition: convex
     auto-animate-duration: 1.5
+    scrollable: true
 
 editor: visual
 jupyter: python3
