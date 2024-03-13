@@ -46,14 +46,14 @@ drugs = pd.read_csv(url)
 ```
 
 ## Introduction {style="font-size: 0.7em;"}
-
+:::incremental
 - The evolution of drug development are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.
 - An indepth understanding of the evolving nature of drugs can greatly contribute to the current and ongoing research advancements in the health domain and carefully guide the government in making efficient health policies.
 - The dataset of interest was collected by the European Medicines Agency and contains 1988 rows and 28 columns, including numerical and categorical variables.
 - With our dataset, we will be answering two questions:
     1. What COVID vaccines has undergone the most revisions while maintaining approved authorization status?
     2. What are the recently released medicine for Hepatitis B?
-
+:::
 ## Question 1: {style="font-size: 0.7em;"}
 
 **Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?**
@@ -71,13 +71,14 @@ Answering question 1 requires the use of the following variables: <br><br>
 |                      |                                          |
 
 ## Approach {style="font-size: 0.7em;"}
+:::incremental
 
 <br>
 1.  Filtered the dataset to include only COVID vaccines based on 'therapeutic_area' variable.<br><br>
 2.  Excluded medicines with conditions applied in the 'conditional_approval' variable.<br><br>
 3.  Sorted the dataset based on the 'revision_number' in descending order to get the vaccines with the most revisions.<br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'revision_number') for the vaccines.
-
+:::
 
 ## Top 5 COVID vaccines with the most revisions. {style="font-size: 0.65em;"}
 ::: panel-tabset
@@ -155,12 +156,13 @@ Answering question 2 requires the use of the following variables: <br>
 |                   |                                                  |
 
 ## Approach {style="font-size: 0.7em;"}
-
+:::incremental
 <br>
 1.  Filtered the dataset to include only medicines related to 'Hepatitis B' in the 'therapeutic_area' variable. <br><br>
 2.  Filtered the dataset to include only medicines for humans in the 'category' variable. <br><br>
 3.  Sorted the dataset based on the 'revision_date' in descending order to get the most recently revised medicines. <br><br>
 4.  Extracted and displayed the relevant columns ('medicine_name' and 'marketing_authorisation_holder_company_name') for the most recently revised medicines.
+:::
 
 ## The latest Hepatitis medicines approved for human use. {style="font-size: 0.7em;"}
 ::: panel-tabset
@@ -216,10 +218,12 @@ plt.show()
 :::
 
 ## Limitations: {style="font-size: 0.7em;"}
+:::incremental
 
 -  As our project is focused on current datasets encompassing drugs for COVID and hepatitis B, we can think of  utilizing ML models for predicting future changes in drugs.
 
 -  For COVID-19, we are focusing on medicine which have undergone most revisions but this doesn't necessarily tell us about their quality or level of advancement.
+
 
 ## Thank you
 
