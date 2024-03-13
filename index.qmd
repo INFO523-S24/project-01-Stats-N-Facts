@@ -51,7 +51,7 @@ The strategy to uncover COVID vaccines with the most revisions while maintaining
 Following data preparation and sorting, the extraction of pertinent columns ('medicine_name', 'revision_number', 'therapeutic_area') lays the groundwork for a visually impactful bar plot. This visualization method, chosen for its clarity and interpretability, showcases the top 5 COVID vaccines with the most revisions. The use of color in the plot not only enhances visual appeal but also aids in distinguishing between different vaccines. By amalgamating imputation, filtering, sorting, and visualization techniques, this approach facilitates a comprehensive exploration, offering a nuanced understanding of the regulatory nuances and adaptations of these critical COVID vaccines.
 
 
-## Question 1 Solution
+### Analysis
 
 ```{python question 1 plot}
 # Replace null values with empty string in 'therapeutic_area' column
@@ -129,7 +129,7 @@ The exploration of the most recently released medicines targeting Hepatitis B in
 Following the data preparation steps, the approach shifts to visualization, employing a table representation to succinctly convey detailed information about the most recent Hepatitis B medicines. This choice is driven by the need for precision and efficiency in presenting key details such as medicine name, marketing authorization holder company, and revision date. The custom table incorporates color mapping, utilizing skyblue for column headers to enhance visual appeal and facilitate quick identification of crucial information. This dual-method approach, blending filtering and color-enhanced table representation, not only uncovers the latest developments in Hepatitis B medication but also ensures a visually accessible and comprehensive presentation of the information.
 
 
-## Question 2 Solution
+### Analysis
 
 ```{python question 2 wrangling}
 # Replace null values with empty string in 'therapeutic_area' column
