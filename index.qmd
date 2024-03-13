@@ -97,10 +97,10 @@ ax.set_ylabel('Revision Number', fontdict=label_font)
 ax.set_title('\n Top 5 COVID vaccines that have undergone the most revisions \n', fontdict=title_font)
 
 # Wrap long medicine names into two lines
-wrapped_names = [textwrap.fill(name, width=25) for name in medicine_names]
+wrapped_names = [textwrap.fill(name, width = 25) for name in medicine_names]
 
 # Set tick labels with line breaks
-ax.set_xticklabels(wrapped_names, rotation=30, ha='right')
+ax.set_xticklabels(wrapped_names, rotation = 30, ha='right')
 
 # Show plot
 plt.tight_layout()
@@ -210,7 +210,7 @@ pivot_df_filtered = filtered_hepB_drugs.pivot_table(index = 'revision_date', col
 cumulative_revisions_filtered = pivot_df_filtered.cumsum()
 
 # Plotting
-plt.figure(figsize = (12, 6))
+plt.figure(figsize = (8, 5))
 plt.stackplot(cumulative_revisions_filtered.index, cumulative_revisions_filtered.T, labels=cumulative_revisions_filtered.columns, alpha = 0.5)
 
 # Adding labels and title
