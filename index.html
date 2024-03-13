@@ -4759,18 +4759,14 @@ vertical-align: -.125em;
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
-  </ul></li>
-  <li><a href="#question-1-solution" id="toc-question-1-solution" class="nav-link" data-scroll-target="#question-1-solution">Question 1 Solution</a>
-  <ul class="collapse">
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul></li>
   <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a>
   <ul class="collapse">
   <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1">Introduction</a></li>
   <li><a href="#approach-1" id="toc-approach-1" class="nav-link" data-scroll-target="#approach-1">Approach</a></li>
-  </ul></li>
-  <li><a href="#question-2-solution" id="toc-question-2-solution" class="nav-link" data-scroll-target="#question-2-solution">Question 2 Solution</a>
-  <ul class="collapse">
+  <li><a href="#analysis-1" id="toc-analysis-1" class="nav-link" data-scroll-target="#analysis-1">Analysis</a></li>
   <li><a href="#discussion-1" id="toc-discussion-1" class="nav-link" data-scroll-target="#discussion-1">Discussion</a></li>
   </ul></li>
   </ul>
@@ -4809,7 +4805,7 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
 <p>This dataset, an intricate mosaic sourced from the European Medicines Agency, encapsulates the multifaceted landscape of European drug development. Housing 1988 records and boasting 28 variables, it unfolds a comprehensive narrative of pharmaceutical products. From fundamental details like medicine categories, therapeutic areas, and active substances to nuanced insights encompassing patient safety indicators, authorization statuses, and regulatory nuances, the dataset is a treasure trove for those deciphering the complex journey from drug conception to authorization.</p>
 <p>Navigating through the dataset reveals crucial regulatory milestones, including marketing authorization dates, refusal details, and designations such as orphan medicine and accelerated assessment. The inclusion of variables indicating generic status, biosimilarity, and revision histories further enriches the dataset, offering a panoramic view of pharmaceutical endeavors in Europe. As we embark on the analysis of this dataset, our objective is to distill valuable insights, uncovering trends and correlations that underpin the intricate dance between regulation and innovation in European drug development.</p>
-<div id="60d7f9bb" class="cell" data-execution_count="1">
+<div id="8d93382d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Libraries</span></span>
@@ -4821,7 +4817,7 @@ vertical-align: -.125em;
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cb70fd18" class="cell" data-execution_count="2">
+<div id="d0db47f8" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the data</span></span>
@@ -5005,10 +5001,9 @@ vertical-align: -.125em;
 <p>The strategy to uncover COVID vaccines with the most revisions while maintaining approved authorization status and devoid of applied conditions involves a systematic process of data preparation, filtering, and visualization. Beginning with imputation to handle null values in the ‘therapeutic_area’ column, the dataset is refined by filtering out drugs related to COVID, creating a specialized subset focused on vaccines for the virus. Subsequent steps include the filtration of the dataset to exclusively include authorized medicines and sorting based on ‘revision_number’ in descending order. This sequential arrangement positions vaccines with the highest revision numbers at the forefront, providing valuable insights into their dynamic regulatory trajectory.</p>
 <p>Following data preparation and sorting, the extraction of pertinent columns (‘medicine_name’, ‘revision_number’, ‘therapeutic_area’) lays the groundwork for a visually impactful bar plot. This visualization method, chosen for its clarity and interpretability, showcases the top 5 COVID vaccines with the most revisions. The use of color in the plot not only enhances visual appeal but also aids in distinguishing between different vaccines. By amalgamating imputation, filtering, sorting, and visualization techniques, this approach facilitates a comprehensive exploration, offering a nuanced understanding of the regulatory nuances and adaptations of these critical COVID vaccines.</p>
 </section>
-</section>
-<section id="question-1-solution" class="level2">
-<h2 class="anchored" data-anchor-id="question-1-solution">Question 1 Solution</h2>
-<div id="566bb6c2" class="cell" data-execution_count="3">
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
+<div id="e5244b2e" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -5030,7 +5025,7 @@ vertical-align: -.125em;
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>vaccine_revisions <span class="op">=</span> covid_vaccines_sorted[[<span class="st">&#39;revision_number&#39;</span>, <span class="st">&#39;medicine_name&#39;</span>, <span class="st">&#39;therapeutic_area&#39;</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="0123f1cc" class="cell" data-execution_count="4">
+<div id="43916bf7" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top-5 data</span></span>
@@ -5073,6 +5068,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
+</section>
 <section id="discussion" class="level3">
 <h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
 <p>The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 40 revisions out of the top 5 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech’s mRNA vaccine Comirnaty, which has undergone 38 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its 35 changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.</p>
@@ -5092,10 +5088,9 @@ vertical-align: -.125em;
 <p>The exploration of the most recently released medicines targeting Hepatitis B involves a strategic combination of data filtering and visualization techniques. The initial step focuses on meticulous data filtering, ensuring a targeted analysis by including only medicines related to Hepatitis B in the ‘therapeutic_area’ variable. Subsequent filters narrow down the dataset to human medicines with authorized status, refining the scope to pharmaceutical interventions specifically designed for human usage and approved for treating Hepatitis B. The critical sorting step organizes the dataset based on the ‘revision_date’ in descending order, spotlighting the most recent releases and enabling a chronological understanding of advancements in Hepatitis B medication.</p>
 <p>Following the data preparation steps, the approach shifts to visualization, employing a table representation to succinctly convey detailed information about the most recent Hepatitis B medicines. This choice is driven by the need for precision and efficiency in presenting key details such as medicine name, marketing authorization holder company, and revision date. The custom table incorporates color mapping, utilizing skyblue for column headers to enhance visual appeal and facilitate quick identification of crucial information. This dual-method approach, blending filtering and color-enhanced table representation, not only uncovers the latest developments in Hepatitis B medication but also ensures a visually accessible and comprehensive presentation of the information.</p>
 </section>
-</section>
-<section id="question-2-solution" class="level2">
-<h2 class="anchored" data-anchor-id="question-2-solution">Question 2 Solution</h2>
-<div id="77a4e544" class="cell" data-execution_count="5">
+<section id="analysis-1" class="level3">
+<h3 class="anchored" data-anchor-id="analysis-1">Analysis</h3>
+<div id="4f8e169c" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -5122,7 +5117,7 @@ vertical-align: -.125em;
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#print(top_5_result)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="61120e36" class="cell" data-execution_count="6">
+<div id="09fdb31b" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom column labels</span></span>
@@ -5153,7 +5148,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
-<div id="92717b05" class="cell" data-execution_count="7">
+<div id="6cde75c5" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of specific Hepatitis B medicines from the drugs dataset</span></span>
@@ -5206,6 +5201,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
+</section>
 <section id="discussion-1" class="level3">
 <h3 class="anchored" data-anchor-id="discussion-1">Discussion</h3>
 <p>While we examined the data, some interesting and fascinating developments in the filed of Hepatitis B therapy got our attention. For the people afflicted with this illness, it is seen that some few new medications has been licensed for the use of humans. For instance, Vaxelis, that was approved by MCM Vaccine B.V. on the February 20, 2023, gives out hopes and promises as an enhanced vaccination option against diseases, including Hepatitis B. This implies that efforts to further improve the efficacy of immunization programs should continue.</p>
