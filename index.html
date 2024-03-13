@@ -4766,7 +4766,7 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
 <p>This dataset, an intricate mosaic sourced from the European Medicines Agency, encapsulates the multifaceted landscape of European drug development. Housing 1988 records and boasting 28 variables, it unfolds a comprehensive narrative of pharmaceutical products. From fundamental details like medicine categories, therapeutic areas, and active substances to nuanced insights encompassing patient safety indicators, authorization statuses, and regulatory nuances, the dataset is a treasure trove for those deciphering the complex journey from drug conception to authorization.</p>
 <p>Navigating through the dataset reveals crucial regulatory milestones, including marketing authorization dates, refusal details, and designations such as orphan medicine and accelerated assessment. The inclusion of variables indicating generic status, biosimilarity, and revision histories further enriches the dataset, offering a panoramic view of pharmaceutical endeavors in Europe. As we embark on the analysis of this dataset, our objective is to distill valuable insights, uncovering trends and correlations that underpin the intricate dance between regulation and innovation in European drug development.</p>
-<div id="cca7f8f9" class="cell" data-execution_count="1">
+<div id="6b72f7e6" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Libraries</span></span>
@@ -4778,7 +4778,7 @@ vertical-align: -.125em;
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="d0c9474d" class="cell" data-execution_count="2">
+<div id="90e135c6" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the data</span></span>
@@ -4958,11 +4958,11 @@ vertical-align: -.125em;
 <section id="approach" class="level3">
 <h3 class="anchored" data-anchor-id="approach">Approach</h3>
 <p>The strategy to uncover COVID vaccines with the most revisions while maintaining approved authorization status and devoid of applied conditions involves a systematic process of data preparation, filtering, and visualization. Beginning with imputation to handle null values in the ‘therapeutic_area’ column, the dataset is refined by filtering out drugs related to COVID, creating a specialized subset focused on vaccines for the virus. Subsequent steps include the filtration of the dataset to exclusively include authorized medicines and sorting based on ‘revision_number’ in descending order. This sequential arrangement positions vaccines with the highest revision numbers at the forefront, providing valuable insights into their dynamic regulatory trajectory.</p>
-<p>Following data preparation and sorting, the extraction of pertinent columns (‘medicine_name’, ‘revision_number’, ‘therapeutic_area’) lays the groundwork for a visually impactful bar plot. This visualization method, chosen for its clarity and interpretability, showcases the top 5 COVID vaccines with the most revisions. The use of color in the plot not only enhances visual appeal but also aids in distinguishing between different vaccines. By amalgamating imputation, filtering, sorting, and visualization techniques, this approach facilitates a comprehensive exploration, offering a nuanced understanding of the regulatory nuances and adaptations of these critical COVID vaccines.</p>
+<p>Following data preparation and sorting, the extraction of pertinent columns (‘medicine_name’, ‘revision_number’, ‘therapeutic_area’) lays the groundwork for a visually impactful bar plot. This visualization method, chosen for its clarity and interpretability, showcases the top 10 COVID vaccines with the most revisions. The use of color in the plot not only enhances visual appeal but also aids in distinguishing between different vaccines. By amalgamating imputation, filtering, sorting, and visualization techniques, this approach facilitates a comprehensive exploration, offering a nuanced understanding of the regulatory nuances and adaptations of these critical COVID vaccines.</p>
 </section>
 <section id="analysis" class="level3">
 <h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
-<div id="a402e67a" class="cell" data-execution_count="3">
+<div id="26cdf728" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -4984,7 +4984,7 @@ vertical-align: -.125em;
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>vaccine_revisions <span class="op">=</span> covid_vaccines_sorted[[<span class="st">&#39;revision_number&#39;</span>, <span class="st">&#39;medicine_name&#39;</span>, <span class="st">&#39;therapeutic_area&#39;</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="2ec79663" class="cell" data-execution_count="4">
+<div id="accfe668" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top-10 data</span></span>
@@ -5030,7 +5030,7 @@ vertical-align: -.125em;
 </section>
 <section id="discussion" class="level3">
 <h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
-<p>The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 40 revisions out of the top 5 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech’s mRNA vaccine Comirnaty, which has undergone 38 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its 35 changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.</p>
+<p>The dynamic regulatory environment guiding vaccine production has become more apparent as a result of the preprocessing and subsequent visualization of COVID vaccination data. RoActemra has undergone an astounding 40 revisions out of the top 10 vaccines with the most while still having an official authorization status. This indicates that the vaccine is still being researched and refined in its application for severe COVID-19 cases. Pfizer-BioNTech’s mRNA vaccine Comirnaty, which has undergone 38 revisions, comes in second, showing how carefully the process was followed to adjust to new variations and enhance vaccination efficacy. In a similar vein, Spikevax—previously known as Moderna COVID-19 Vaccine—with its 35 changes highlights the cooperative efforts of regulators and manufacturers to guarantee continued safety and efficacy in the face of changing scientific knowledge.</p>
 <p>These results highlight the iterative process involved in developing vaccines and the proactive approach taken by regulatory bodies in tackling new issues. The substantial amount of changes made to these top vaccines shows a dedication to ongoing adaptation and enhancement in the face of a quickly changing pandemic environment. Sustaining the efficacy of COVID vaccination campaigns and ultimately halting the virus’s spread would need constant watchfulness and adaptability as research progresses and new strains appear.</p>
 </section>
 </section>
@@ -5049,7 +5049,7 @@ vertical-align: -.125em;
 </section>
 <section id="analysis-1" class="level3">
 <h3 class="anchored" data-anchor-id="analysis-1">Analysis</h3>
-<div id="515c68ef" class="cell" data-execution_count="5">
+<div id="a44ac197" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace null values with empty string in &#39;therapeutic_area&#39; column</span></span>
@@ -5068,15 +5068,15 @@ vertical-align: -.125em;
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>recently_revised_medicines <span class="op">=</span> authorised_hepatitis_b_medicines.sort_values(by<span class="op">=</span><span class="st">&#39;revision_date&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract and display the relevant columns (&#39;medicine_name&#39; and &#39;marketing_authorisation_holder_company_name&#39;) for the most recently revised medicines</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>top_5_result <span class="op">=</span> recently_revised_medicines[[<span class="st">&#39;medicine_name&#39;</span>, <span class="st">&#39;marketing_authorisation_holder_company_name&#39;</span>, <span class="st">&#39;revision_date&#39;</span>]].head(<span class="dv">5</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>top_10_result <span class="op">=</span> recently_revised_medicines[[<span class="st">&#39;medicine_name&#39;</span>, <span class="st">&#39;marketing_authorisation_holder_company_name&#39;</span>, <span class="st">&#39;revision_date&#39;</span>]].head(<span class="dv">5</span>)</span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract only the date part using string operations</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>top_5_result[<span class="st">&#39;revision_date&#39;</span>] <span class="op">=</span> top_5_result[<span class="st">&#39;revision_date&#39;</span>].<span class="bu">str</span>[:<span class="dv">10</span>]</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>top_10_result[<span class="st">&#39;revision_date&#39;</span>] <span class="op">=</span> top_10_result[<span class="st">&#39;revision_date&#39;</span>].<span class="bu">str</span>[:<span class="dv">10</span>]</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#print(top_5_result)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#print(top_10_result)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="6f5913e3" class="cell" data-execution_count="6">
+<div id="78630114" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom column labels</span></span>
@@ -5084,12 +5084,12 @@ vertical-align: -.125em;
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw a table to display the result</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">2.5</span>))</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> plt.table(cellText<span class="op">=</span>top_5_result.values,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> plt.table(cellText<span class="op">=</span>top_10_result.values,</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                  colLabels<span class="op">=</span>custom_col_labels,</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                  loc<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                  cellLoc<span class="op">=</span><span class="st">&#39;center&#39;</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                  colColours<span class="op">=</span>[<span class="st">&#39;skyblue&#39;</span>]<span class="op">*</span><span class="bu">len</span>(top_5_result.columns),</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                  cellColours<span class="op">=</span>[[<span class="st">&#39;lightgrey&#39;</span>]<span class="op">*</span><span class="bu">len</span>(top_5_result.columns)]<span class="op">*</span><span class="bu">len</span>(top_5_result),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                  colColours<span class="op">=</span>[<span class="st">&#39;skyblue&#39;</span>]<span class="op">*</span><span class="bu">len</span>(top_10_result.columns),</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                  cellColours<span class="op">=</span>[[<span class="st">&#39;lightgrey&#39;</span>]<span class="op">*</span><span class="bu">len</span>(top_10_result.columns)]<span class="op">*</span><span class="bu">len</span>(top_10_result),</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                  fontsize<span class="op">=</span><span class="dv">10</span>)</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>table.auto_set_font_size(<span class="va">False</span>)</span>
@@ -5107,7 +5107,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
-<div id="a9ef8aa6" class="cell" data-execution_count="7">
+<div id="da1700f2" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of specific Hepatitis B medicines from the drugs dataset</span></span>
