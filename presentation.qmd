@@ -85,6 +85,8 @@ Answering question 1 requires the use of the following variables: <br><br>
 ### Plot 
 
 ```{python}
+import re
+
 # Replace null values with empty string in 'therapeutic_area' column
 drugs['therapeutic_area'].fillna('', inplace=True)
 
