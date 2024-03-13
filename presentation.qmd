@@ -26,7 +26,7 @@ jupyter: python3
 execute:
   echo: false
   warning: false
-  message:false
+  message: false
 editor_options:
     chunk_output_type: console
 ---
@@ -217,8 +217,10 @@ plt.show()
 
 ## Limitations: {style="font-size: 0.7em;"}
 
--  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+-  As our project is focused on current datasets encompassing drugs for COVID and hepatitis B, we can think of  utilizing ML models for predicting future changes in drugs.
 
--  There should not be spaces after the opening `$` or before the closing `$`.
+-  For COVID-19, we are focusing on medicine which have undergone most revisions but this doesn't necessarily tell us about their quality or level of advancement.
+
+## Thank you
 
 ![](images/thank-you-dog.gif){fig-align="center"}
