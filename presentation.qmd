@@ -90,6 +90,7 @@ import re
 # Replace null values with empty string in 'therapeutic_area' column
 drugs['therapeutic_area'].fillna('', inplace=True)
 
+
 # Filter COVID vaccines based on 'therapeutic_area'
 covid_vaccines = drugs[drugs['therapeutic_area'].str.contains('COVID', case=False)]
 
