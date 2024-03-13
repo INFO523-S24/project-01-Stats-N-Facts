@@ -397,8 +397,15 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </section>
 <section id="approach" class="slide level2" style="font-size: 0.7em;">
 <h2>Approach</h2>
-<p><br> 1. Filtered the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable.<br><br> 2. Excluded medicines with conditions applied in the ‘conditional_approval’ variable.<br><br> 3. Sorted the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions.<br><br> 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines. ## Plot {style=“font-size: 0.65em;”} ::: panel-tabset ### Plot</p>
-<div id="b1970a89" class="cell" data-execution_count="3">
+<p><br> 1. Filtered the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable.<br><br> 2. Excluded medicines with conditions applied in the ‘conditional_approval’ variable.<br><br> 3. Sorted the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions.<br><br> 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines.</p>
+</section>
+<section id="top-5-covid-vaccines-with-the-most-revisions." class="slide level2" style="font-size: 0.65em;">
+<h2>Top 5 COVID vaccines with the most revisions.</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Analysis</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div id="ca5ae2ac" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -407,10 +414,17 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </div>
 </div>
 </div>
-<h3 id="analysis">Analysis</h3>
+</div>
+<div id="tabset-1-2">
 <ul>
-<li>The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively. ::: ## Question 2: {style=“font-size: 0.7em;”}</li>
+<li>The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.</li>
 </ul>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2" class="slide level2" style="font-size: 0.7em;">
+<h2>Question 2:</h2>
 <p><strong>What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</strong></p>
 <p><br> Answering question 2 requires the use of the following variables: <br></p>
 <table>
@@ -460,13 +474,13 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <h2>Approach</h2>
 <p><br> 1. Filtered the dataset to include only medicines related to ‘Hepatitis B’ in the ‘therapeutic_area’ variable. <br><br> 2. Filtered the dataset to include only medicines for humans in the ‘category’ variable. <br><br> 3. Sorted the dataset based on the ‘revision_date’ in descending order to get the most recently revised medicines. <br><br> 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘marketing_authorisation_holder_company_name’) for the most recently revised medicines.</p>
 </section>
-<section id="plot" class="slide level2" style="font-size: 0.7em;">
-<h2>Plot</h2>
+<section id="the-latest-hepatitis-medicines-approved-for-human-use." class="slide level2" style="font-size: 0.7em;">
+<h2>The latest Hepatitis medicines approved for human use.</h2>
 <div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Analysis</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Plot</a></li><li><a href="#tabset-2-2">Analysis</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1">
-<div id="a2c81493" class="cell" data-execution_count="5">
+<div id="tabset-2-1">
+<div id="2cfa96d4" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -476,7 +490,7 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </div>
 </div>
 </div>
-<div id="tabset-1-2">
+<div id="tabset-2-2">
 <ul>
 <li>The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.</li>
 </ul>
@@ -490,9 +504,6 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <li><p>The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting <code>$$</code> must appear in the very beginning of a line, followed immediately by a non-space character, and the ending <code>$$</code> must be at the end of a line, led by a non-space character;</p></li>
 <li><p>There should not be spaces after the opening <code>$</code> or before the closing <code>$</code>.</p></li>
 </ul>
-</section>
-<section id="thank-you" class="slide level2" style="text-align: center">
-<h2>Thank you</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/thank-you-dog.gif" class="quarto-figure quarto-figure-center"></p>
@@ -662,7 +673,7 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'convex',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',

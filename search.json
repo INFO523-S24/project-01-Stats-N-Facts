@@ -102,7 +102,21 @@
     "href": "presentation.html#approach",
     "title": "Exploring European Drug Development",
     "section": "Approach",
-    "text": "Approach\n 1. Filtered the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable. 2. Excluded medicines with conditions applied in the ‘conditional_approval’ variable. 3. Sorted the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions. 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines. ## Plot {style=“font-size: 0.65em;”} ::: panel-tabset ### Plot\n\n\n\n\n\n\n\n\n\nAnalysis\n\nThe analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively. ::: ## Question 2: {style=“font-size: 0.7em;”}\n\nWhat are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?\n Answering question 2 requires the use of the following variables: \n\n\n\n\n\n\n\nColumn Name\nDescription\n\n\n\n\ncategory\nThe category (human or veterinary) of the medicine\n\n\nmedicine_name\nThe brand name of the medicine\n\n\ntherapeutic_area\nThe therapeutic area for which the medicine is authorized\n\n\nauthorisation_status\nThe authorization status of the medicine\n\n\ncompany_name\nThe company holding the marketing authorization for the medicine\n\n\nrevision_date\nThe date of the latest revision for the medicine"
+    "text": "Approach\n 1. Filtered the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable. 2. Excluded medicines with conditions applied in the ‘conditional_approval’ variable. 3. Sorted the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions. 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines."
+  },
+  {
+    "objectID": "presentation.html#top-5-covid-vaccines-with-the-most-revisions.",
+    "href": "presentation.html#top-5-covid-vaccines-with-the-most-revisions.",
+    "title": "Exploring European Drug Development",
+    "section": "Top 5 COVID vaccines with the most revisions.",
+    "text": "Top 5 COVID vaccines with the most revisions.\n\nPlotAnalysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively."
+  },
+  {
+    "objectID": "presentation.html#question-2",
+    "href": "presentation.html#question-2",
+    "title": "Exploring European Drug Development",
+    "section": "Question 2:",
+    "text": "Question 2:\nWhat are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?\n Answering question 2 requires the use of the following variables: \n\n\n\n\n\n\n\nColumn Name\nDescription\n\n\n\n\ncategory\nThe category (human or veterinary) of the medicine\n\n\nmedicine_name\nThe brand name of the medicine\n\n\ntherapeutic_area\nThe therapeutic area for which the medicine is authorized\n\n\nauthorisation_status\nThe authorization status of the medicine\n\n\ncompany_name\nThe company holding the marketing authorization for the medicine\n\n\nrevision_date\nThe date of the latest revision for the medicine"
   },
   {
     "objectID": "presentation.html#approach-1",
@@ -112,11 +126,11 @@
     "text": "Approach\n 1. Filtered the dataset to include only medicines related to ‘Hepatitis B’ in the ‘therapeutic_area’ variable.  2. Filtered the dataset to include only medicines for humans in the ‘category’ variable.  3. Sorted the dataset based on the ‘revision_date’ in descending order to get the most recently revised medicines.  4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘marketing_authorisation_holder_company_name’) for the most recently revised medicines."
   },
   {
-    "objectID": "presentation.html#plot",
-    "href": "presentation.html#plot",
+    "objectID": "presentation.html#the-latest-hepatitis-medicines-approved-for-human-use.",
+    "href": "presentation.html#the-latest-hepatitis-medicines-approved-for-human-use.",
     "title": "Exploring European Drug Development",
-    "section": "Plot",
-    "text": "Plot\n\nPlotAnalysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications."
+    "section": "The latest Hepatitis medicines approved for human use.",
+    "text": "The latest Hepatitis medicines approved for human use.\n\nPlotAnalysis\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications."
   },
   {
     "objectID": "presentation.html#limitations",
@@ -124,12 +138,5 @@
     "title": "Exploring European Drug Development",
     "section": "Limitations:",
     "text": "Limitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#thank-you",
-    "href": "presentation.html#thank-you",
-    "title": "Exploring European Drug Development",
-    "section": "Thank you",
-    "text": "Thank you"
   }
 ]
