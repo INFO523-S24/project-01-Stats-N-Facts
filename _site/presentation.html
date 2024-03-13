@@ -8,10 +8,10 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.4.547">
 
   <meta name="author" content="H M Abdul Fattah  Srinivasan Poonkundran  Shreemithra Naveen  Nandhini Anne  Sunday Usman">
-  <title>Project Title - Exploring European Drug Development</title>
+  <title> European Drug Development - Exploring European Drug Development</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -244,6 +244,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -327,7 +328,7 @@
 
 <section id="title-slide" data-background-image="images/bg_img.png" data-background-opacity="0.5" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
   <h1 class="title">Exploring European Drug Development</h1>
-  <p class="subtitle">INFO 523 - Spring 2023 - Project 1</p>
+  <p class="subtitle">Team: Stats N Facts<br>INFO 523 - Spring 2023 - Project 1</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -338,19 +339,25 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </div>
 
 </section>
-<section id="introduction" class="slide level2" style="font-size: 0.8em;">
+<section id="introduction" class="slide level2 scrollable" style="font-size: 0.7em;">
 <h2>Introduction</h2>
+<div>
 <ul>
-<li>The evolution of drug development are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.</li>
-<li>An indepth understanding of the evolving nature of drugs can greatly contribute to the current and ongoing research advancements in the health domain and carefully guide the government in making efficient health policies.</li>
-<li>The dataset of interest was collected by the European Medicines Agency.</li>
-<li>This dataset contains 1988 rows and 28 columns, including numerical and categorical variables.</li>
-<li>With our dataset, we will be answering two questions: what COVID vaccines has undergone the most revisions while maintaining approved authorization status and what are the recently released medicine for Hepatitis B?</li>
+<li class="fragment">The evolution of drug development are gaining attention. This shift is driven by changing needs of the population, increasing scientific knowledge, and advances in technology.</li>
+<li class="fragment">An indepth understanding of the evolving nature of drugs can greatly contribute to the current and ongoing research advancements in the health domain and carefully guide the government in making efficient health policies.</li>
+<li class="fragment">The dataset of interest was collected by the European Medicines Agency and contains 1988 rows and 28 columns, including numerical and categorical variables.</li>
+<li class="fragment">With our dataset, we will be answering two questions:
+<ol type="1">
+<li class="fragment">What COVID vaccines has undergone the most revisions while maintaining approved authorization status?</li>
+<li class="fragment">What are the recently released medicine for Hepatitis B?</li>
+</ol></li>
 </ul>
+</div>
 </section>
-<section id="question-1-which-covid-vaccines-have-undergone-the-most-revisions-while-maintaining-an-approved-authorization-status-with-no-conditions-applied" class="slide level2" style="font-size: 0.7em;">
-<h2>Question 1: Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</h2>
-<p>Answering question 1 requires the use of the following variables:</p>
+<section id="question-1" class="slide level2" style="font-size: 0.7em;">
+<h2>Question 1:</h2>
+<p><strong>Which COVID vaccines have undergone the most revisions while maintaining an approved authorization status with no conditions applied?</strong></p>
+<p><br> Answering question 1 requires the use of the following variables: <br><br></p>
 <table>
 <colgroup>
 <col style="width: 40%">
@@ -390,31 +397,40 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </tbody>
 </table>
 </section>
-<section id="approach-for-answering-question-1" class="slide level2" style="font-size: 0.7em;">
-<h2>Approach for answering question 1:</h2>
-<ol type="1">
-<li>Filtered the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable.<br></li>
-<li>Excluded medicines with conditions applied in the ‘conditional_approval’ variable.<br></li>
-<li>Sorted the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions.<br></li>
-<li>Extracted and displayed the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines.</li>
-</ol>
+<section id="approach" class="slide level2" style="font-size: 0.7em;">
+<h2>Approach</h2>
+<div>
+<p><br> 1. Filtered the dataset to include only COVID vaccines based on ‘therapeutic_area’ variable.<br><br> 2. Excluded medicines with conditions applied in the ‘conditional_approval’ variable.<br><br> 3. Sorted the dataset based on the ‘revision_number’ in descending order to get the vaccines with the most revisions.<br><br> 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘revision_number’) for the vaccines.</p>
+</div>
 </section>
-<section id="question-1-solution" class="slide level2" style="font-size: 0.5em;">
-<h2>Question 1 Solution</h2>
-<div id="a7559ef6" class="cell" data-execution_count="4">
+<section id="top-10-covid-vaccines-with-the-most-revisions" class="slide level2" style="font-size: 0.65em;">
+<h2>Top 10 COVID vaccines with the most revisions</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Analysis</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div id="e0cedb69" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/cell-5-output-1.png" width="951" height="569"></p>
+<p><img data-src="presentation_files/figure-revealjs/cell-4-output-1.png" width="802" height="473"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.</p>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>The analysis reveals that among COVID vaccines with approved authorization status and no conditions applied, RoActemra has undergone the most revisions, followed by Comirnaty and Spikevax (previously COVID-19 Vaccine Moderna), with revision numbers of 40, 38, and 35 respectively.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="question-2-what-are-the-most-recently-released-medicines-name-and-company-authorized-for-human-usage-for-hepatitis-b" class="slide level2" style="font-size: 0.6em;">
-<h2>Question 2: What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</h2>
-<p>Answering question 2 requires the use of the following variables:</p>
+<section id="question-2" class="slide level2" style="font-size: 0.7em;">
+<h2>Question 2:</h2>
+<p><strong>What are the most recently released medicines (name and company) authorized for human usage for ‘Hepatitis B’?</strong></p>
+<p><br> Answering question 2 requires the use of the following variables: <br></p>
 <table>
 <colgroup>
 <col style="width: 40%">
@@ -444,7 +460,7 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 <td>The authorization status of the medicine</td>
 </tr>
 <tr class="odd">
-<td>marketing_authorisation_holder_company_name</td>
+<td>company_name</td>
 <td>The company holding the marketing authorization for the medicine</td>
 </tr>
 <tr class="even">
@@ -458,36 +474,66 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 </tbody>
 </table>
 </section>
-<section id="approach-for-answering-question-2" class="slide level2" style="font-size: 0.7em;">
-<h2>Approach for answering question 2:</h2>
-<ol type="1">
-<li>Filtered the dataset to include only medicines related to ‘Hepatitis B’ in the ‘therapeutic_area’ variable. <br></li>
-<li>Filtered the dataset to include only medicines for humans in the ‘category’ variable. <br></li>
-<li>Sorted the dataset based on the ‘revision_date’ in descending order to get the most recently revised medicines. <br></li>
-<li>Extracted and displayed the relevant columns (‘medicine_name’ and ‘marketing_authorisation_holder_company_name’) for the most recently revised medicines.</li>
-</ol>
+<section id="approach-1" class="slide level2" style="font-size: 0.7em;">
+<h2>Approach</h2>
+<div>
+<p><br> 1. Filtered the dataset to include only medicines related to ‘Hepatitis B’ in the ‘therapeutic_area’ variable. <br><br> 2. Filtered the dataset to include only medicines for humans in the ‘category’ variable. <br><br> 3. Sorted the dataset based on the ‘revision_date’ in descending order to get the most recently revised medicines. <br><br> 4. Extracted and displayed the relevant columns (‘medicine_name’ and ‘marketing_authorisation_holder_company_name’) for the most recently revised medicines.</p>
+</div>
 </section>
-<section id="question-2-solution" class="slide level2" style="font-size: 0.6em;">
-<h2>Question 2 Solution</h2>
-<div id="3db15199" class="cell" data-execution_count="6">
+<section id="the-latest-hepatitis-medicines-approved-for-human-use" class="slide level2" style="font-size: 0.7em;">
+<h2>The latest Hepatitis medicines approved for human use</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Plot 1</a></li><li><a href="#tabset-2-2">Plot 2</a></li><li><a href="#tabset-2-3">Analysis</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div id="040a6917" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/cell-7-output-1.png" width="614" height="248"></p>
+<p><img data-src="presentation_files/figure-revealjs/cell-6-output-1.png" width="912" height="434"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.</p>
+</div>
+<div id="tabset-2-2">
+<div id="c07b03ca" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div>
+<figure>
+<p><img data-src="presentation_files/figure-revealjs/cell-7-output-1.png" width="1139" height="566"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<ul>
+<li>The most recently released medicines authorized for human usage for Hepatitis B are Vaxelis by MCM Vaccine B.V. approved in February 2023. Hexacima and Hexyon, both approved in January 2023. This highlights ongoing efforts in pharmaceutical research to combat Hepatitis B through the introduction of new medications.</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="limitations" class="slide level2">
+<section id="limitations" class="slide level2" style="font-size: 0.7em;">
 <h2>Limitations:</h2>
-<ol type="1">
-<li><p>The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting <code>$$</code> must appear in the very beginning of a line, followed immediately by a non-space character, and the ending <code>$$</code> must be at the end of a line, led by a non-space character;</p></li>
-<li><p>There should not be spaces after the opening <code>$</code> or before the closing <code>$</code>.</p></li>
-</ol>
+<div>
+<ul>
+<li class="fragment"><p>As our project is focused on current datasets encompassing drugs for COVID and hepatitis B, we can think of utilizing ML models for predicting future changes in drugs.</p></li>
+<li class="fragment"><p>For COVID-19, we are focusing on medicine which have undergone most revisions but this doesn’t necessarily tell us about their quality or level of advancement.</p></li>
+</ul>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/thank-you-dog.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
 
 <div class="quarto-auto-generated-content">
+<p><img src="images/EMA_Logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
@@ -521,7 +567,7 @@ H M Abdul Fattah<br> Srinivasan Poonkundran<br> Shreemithra Naveen<br> Nandhini 
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
+'autoAnimateDuration': 1.5,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'smaller': false,

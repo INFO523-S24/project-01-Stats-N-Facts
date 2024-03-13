@@ -124,7 +124,7 @@ title_font = {'fontsize': 16, 'fontweight': 'bold'}
 # Set labels and title
 ax.set_xlabel('Medicine Name', fontdict=label_font)
 ax.set_ylabel('Revision Number', fontdict=label_font)
-ax.set_title('\n Top 10 COVID vaccines that have undergone the most revisions \n', fontdict=title_font)
+ax.set_title('\n Top 10 COVID vaccines that have undergone the most revisions \n ', fontdict=title_font)
 
 # Wrap long medicine names into two lines
 wrapped_names = [textwrap.fill(name, width=25) for name in medicine_names]
